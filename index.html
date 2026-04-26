@@ -766,6 +766,429 @@ const questions = [
  q:'Evaluate the view that progressive income tax is the best way to increase equity in an economy.',
  tags:['progressive tax','equity','income redistribution','tax avoidance','alternative policies','transfer payments'],
  hints:['Define progressive income tax (higher rates for higher incomes) and equity','How it works: higher earners pay more → funds public services (healthcare, education) benefiting all','Reduces after-tax income inequality → increases equity','Limitations: disincentive to work/invest (Laffer curve); avoidance/evasion by high earners','Rich may relocate businesses or income offshore','Alternative 1: Transfer payments (UBI, welfare benefits) — more direct redistribution','Alternative 2: Better labour market functioning (minimum wage, anti-discrimination)','Alternative 3: Public goods spending (education, healthcare) — equalises opportunities','Award max [12] if no alternative policy considered']},
+
+/* ══════════════════════════════════════════════════════════
+   2019 – 2020  ADDITIONAL QUESTIONS
+══════════════════════════════════════════════════════════ */
+
+/* ── SUPPLY & DEMAND (new) ── */
+{cat:'sd',diff:'easy',marks:10,type:'Explain',src:'M19 TZ2 · P1 Q1a',
+ q:'Explain two factors which could shift a firm\'s supply curve to the left.',
+ tags:['supply shift','costs of production','indirect tax','supply determinants'],
+ hints:['Define supply and supply curve','Draw diagram: supply curve shifting left','Factor 1: increase in costs of production (wages, raw materials) → less profitable to produce at each price','Factor 2: increase in indirect taxes → raises production costs → supply falls','Other valid factors: rise in price of related good in production, adverse weather, regulations','Award max [6] if only one factor explained']},
+
+{cat:'sd',diff:'medium',marks:10,type:'Explain',src:'N19 · P1 Q2a',
+ q:'Explain the view that the best allocation of resources occurs when consumer surplus and producer surplus are maximized.',
+ tags:['consumer surplus','producer surplus','allocative efficiency','market equilibrium'],
+ hints:['Define consumer surplus (area above price, below demand curve) and producer surplus (area below price, above supply curve)','Draw D&S diagram showing both areas at equilibrium','At equilibrium: total welfare (CS + PS) is maximised — no deadweight loss','Explain: at any other price/quantity, some surplus is lost → inefficient allocation','Resources flow to their highest-valued use when market clears','Examples: competitive markets that clear efficiently, e.g., commodity markets']},
+
+/* ── ELASTICITY (new) ── */
+{cat:'ela',diff:'medium',marks:10,type:'Explain',src:'N19 · P1 Q1a',
+ q:'Explain two reasons why the demand for manufactured goods might be price elastic.',
+ tags:['PED','price elastic','manufactured goods','substitutes','luxury goods'],
+ hints:['Define price elasticity of demand (PED) and what "price elastic" means (PED > 1)','Draw diagram with elastic demand curve (flatter)','Reason 1: Availability of many close substitutes — consumers can easily switch brand (e.g., smartphones, clothing)','Reason 2: Goods are luxuries rather than necessities — consumers willing to reduce/delay purchase if price rises','Other valid reasons: proportion of income spent (high → more elastic); time available to adjust','Award max [6] (Level 2 ceiling) if only one reason explained']},
+
+{cat:'ela',diff:'hard',marks:15,type:'Evaluate',src:'N19 · P1 Q1b',
+ q:'Evaluate the importance of cross price elasticity of demand (XED) for a business selling a good if the price of a related good increases.',
+ tags:['XED','cross-price elasticity','substitutes','complements','revenue','demand shift'],
+ hints:['Define XED = % change in Qd of good A / % change in P of good B','Positive XED = substitutes; negative XED = complements','If substitute rises in price: demand for your good increases → higher TR (diagram: D shifts right)','If complement rises in price: demand for your good decreases → lower TR (diagram: D shifts left)','Evaluate: size of XED matters — weak substitutes/complements have small effects','Limitation: XED is difficult to measure in practice; ceteris paribus rarely holds','Real-world: e.g., Apple AirPods and iPhones (complements); Pepsi and Coca-Cola (substitutes)','Most important: firm must identify correctly whether goods are substitutes or complements to avoid mispricing']},
+
+/* ── PRICE CEILINGS (new) ── */
+{cat:'pc',diff:'medium',marks:10,type:'Explain',src:'M19 TZ1 · P1 Q2a',
+ q:'Explain why a government might decide to impose a price ceiling on goods and services such as essential foods or rented housing.',
+ tags:['price ceiling','maximum price','essential goods','equity','housing','market power'],
+ hints:['Define price ceiling (maximum price set below equilibrium)','Draw diagram showing ceiling below equilibrium → excess demand (shortage)','Reason 1: Equity — to make essential goods affordable for low-income households (e.g., bread, rent)','Reason 2: Counter market power — if monopoly supplier charges excessive prices','Reason 3: Political reasons — popular policy; seen to protect vulnerable groups','Examples: rent controls in NYC/Berlin; fuel price caps; food price controls in low-income countries']},
+
+{cat:'pc',diff:'hard',marks:15,type:'Discuss',src:'N20 · P1 Q2b',
+ q:'Discuss the consequences for different stakeholders when the government imposes a price ceiling on a market.',
+ tags:['price ceiling','stakeholders','shortage','black market','consumers','producers','government'],
+ hints:['Define price ceiling (maximum price below equilibrium); draw diagram showing shortage','Consumers (lucky): benefit from lower price — gain consumer surplus if they can buy','Consumers (unlucky): face shortage — queuing, rationing, black markets; some cannot access good at all','Producers: receive lower price → fall in revenue and profit; may reduce quality or exit market','Workers: producers may cut costs → possible job losses','Government: administrative cost; risk of parallel markets; may need to ration the good','Evaluate: effectiveness depends on enforcement, elasticities, and whether alternative rationing exists','Real-world: rent controls in Berlin/San Francisco; petrol price caps in Venezuela']},
+
+/* ── PRICE FLOORS (new) ── */
+{cat:'pf',diff:'easy',marks:10,type:'Explain',src:'N20 · P1 Q2a',
+ q:'Explain the impact of a price floor on market outcomes.',
+ tags:['price floor','minimum price','surplus','welfare','market outcomes'],
+ hints:['Define price floor (minimum price set above equilibrium)','Draw diagram: price floor creates surplus (Qs > Qd)','Impact 1: Price rises above equilibrium → consumers pay more, quantity demanded falls','Impact 2: Quantity supplied rises above quantity demanded → unsold surplus','Impact 3: Government may need to purchase surplus → costly','Impact 4: Welfare loss (deadweight loss) triangle between Qd and Qs at the floor price','Note: price floor on demerit goods (e.g., minimum alcohol price) can be rewarded']},
+
+/* ── EXTERNALITIES & MARKET FAILURE (new) ── */
+{cat:'ext',diff:'medium',marks:10,type:'Explain',src:'N20 · P1 Q1a',
+ q:'Explain how production that causes pollution leads to market failure.',
+ tags:['negative production externality','market failure','MSC','MPC','pollution','over-production'],
+ hints:['Define market failure and negative production externality','Draw diagram: MSC above MPC; market produces Qm > socially optimal Qs','Polluting firms only bear private costs (MPC), not social costs (MSC = MPC + external costs)','Result: over-production relative to socially optimal level → too many resources allocated to polluting industry','Welfare loss = deadweight loss triangle between Qs and Qm','Examples: coal power stations, chemical plants, intensive farming']},
+
+{cat:'ext',diff:'medium',marks:10,type:'Explain',src:'M19 TZ2 · P1 Q2a',
+ q:'Explain why public transport, such as buses and trains, might be under-provided in a market economy.',
+ tags:['positive externality','public transport','under-provision','MSB','MPB','merit good'],
+ hints:['Define under-provision and positive externality of consumption','Draw diagram: MSB > MPB; market produces Qm < socially optimal Qs','Private market only considers MPB (rider\'s benefit), not external benefits (reduced congestion, pollution)','MSB > MPB → positive externality of consumption → market under-provides','Result: welfare loss between Qm and Qs — too little public transport provided','Also: large fixed costs and network effects make private provision difficult','Examples: UK bus services; metro systems in developing countries; rural rail lines']},
+
+{cat:'ext',diff:'hard',marks:15,type:'Discuss',src:'N20 · P1 Q1b',
+ q:'Discuss whether government regulation is the most effective way to deal with negative externalities of consumption.',
+ tags:['negative externality of consumption','government regulation','Pigouvian tax','demerit goods','policy comparison'],
+ hints:['Define negative externalities of consumption; draw MPB vs MSB diagram','Regulation: e.g., banning smoking in public places, compulsory safety standards → shifts MPB toward MSB','Advantages of regulation: direct, certain outcome, difficult to avoid, can be targeted','Disadvantages: costly to enforce; may not achieve socially optimal level; black market risk','Alternative 1: Indirect tax (Pigouvian) → raises price to consumer, reduces consumption, raises revenue','Alternative 2: Advertising campaigns → shifts MPB rightward (education)','Alternative 3: Subsidise substitutes with fewer externalities','Evaluate "most effective": depends on nature of externality, enforcement capacity, demand elasticity','NB: Must consider alternative to regulation to reach full marks']},
+
+{cat:'ext',diff:'hard',marks:15,type:'Discuss',src:'M19 TZ2 · P1 Q2b',
+ q:'Discuss the view that imposing an indirect tax on gasoline (petrol) is the most effective way of reducing the market failure caused by cars.',
+ tags:['indirect tax','negative externality','gasoline','cars','congestion','pollution','policy comparison'],
+ hints:['Draw negative externality of production/consumption diagram for cars; show MSC > MPC','Indirect tax on petrol: shifts supply left → higher price → less driving → internalises externality','Advantages: market-based, raises government revenue, incentivises fuel efficiency','Disadvantages: regressive (higher burden on low-income drivers); imprecise (taxes fuel not congestion directly)','PED of petrol tends to be inelastic → large price rise needed for small reduction in consumption','Alternatives: congestion charges (more targeted); subsidise public transport; electric car subsidies; regulations (emission standards)','Evaluate: combination of policies likely needed; petrol tax alone insufficient if inelastic demand','Consider: environmental concern, distributional effects, alternative technology']},
+
+/* ── GOVERNMENT INTERVENTION (new) ── */
+{cat:'gov',diff:'hard',marks:15,type:'Evaluate',src:'M19 TZ1 · P1 Q2b',
+ q:'Evaluate the view that the most effective way in which the government can encourage the consumption of merit goods is through direct provision.',
+ tags:['merit goods','direct provision','under-consumption','positive externality','subsidies','vouchers'],
+ hints:['Define merit goods (under-consumed at free market price due to positive externalities or imperfect information)','Direct provision: government provides the good free/at low cost (e.g., state education, NHS)','Advantages: ensures universal access; corrects under-consumption; reaches low-income groups','Disadvantages: expensive (opportunity cost); possible inefficiency; free riders; government may over/under-provide','Alternative 1: Subsidies → lower price → increase consumption, preserves market mechanism','Alternative 2: Maximum price (price ceiling) → makes good affordable but creates shortage risk','Alternative 3: Legislation (compulsory wearing of seatbelts, mandatory schooling)','Alternative 4: Advertising/information campaigns → shifts preferences','NB: Must consider alternatives — maximum Level 3 if no alternatives discussed']},
+
+{cat:'gov',diff:'hard',marks:15,type:'Discuss',src:'N19 · P1 Q2b',
+ q:'Discuss the implications of the direct provision of public goods by a government.',
+ tags:['public goods','direct provision','non-excludable','non-rival','free rider','government failure'],
+ hints:['Define public goods: non-excludable + non-rival (e.g., national defence, street lighting, flood defence)','Free-rider problem → market will under-provide or not provide at all','Government direct provision corrects market failure → ensures public goods are available','Positive implications: all citizens benefit; national security maintained; no free-rider problem','Negative implications: opportunity cost of government spending; risk of government failure (inefficient production)','Government must decide quantity to provide — difficult without price signals','Private sector can sometimes provide (e.g., toll roads as quasi-public goods)','Evaluation: public goods are non-rival — provision to extra user costs nothing; key challenge is funding (taxation)']},
+
+{cat:'gov',diff:'hard',marks:15,type:'Discuss',src:'M19 TZ2 · P1 Q1b',
+ q:'Discuss the view that the provision of subsidies by the government on goods such as agricultural products will always be beneficial to stakeholders.',
+ tags:['subsidies','agricultural products','stakeholders','market distortion','government spending','equity'],
+ hints:['Define subsidy; draw diagram showing supply shifting right → lower price, higher quantity','Producers: receive higher price (including subsidy) → higher revenue and profit','Consumers: pay lower price → gain consumer surplus; improved access to food','Government: bears cost of subsidy → opportunity cost (could fund schools, hospitals)','Workers: employment in subsidised industry may be protected','Not always beneficial: market distortion → inefficient resource allocation','May protect inefficient domestic producers; discourages productivity improvements','WTO rules may be violated; trading partners may retaliate (e.g., EU agricultural subsidies hurt developing-country farmers)','Evaluate: benefits depend on PED/PES, whether subsidy is targeted, who receives it, and fiscal cost']},
+
+/* ── AD/AS MODEL (new) ── */
+{cat:'adas',diff:'medium',marks:10,type:'Explain',src:'M19 TZ1 · P1 Q3a',
+ q:'Explain how aggregate demand in an economy might be affected by a rise in the exchange rate and a decrease in the income of major trading partners.',
+ tags:['aggregate demand','exchange rate','trading partner income','net exports','AD shift'],
+ hints:['Define aggregate demand (AD = C + I + G + X − M)','Draw AD/AS diagram: AD shifts left','Rise in exchange rate: exports become more expensive abroad → X falls; imports become cheaper → M rises → net exports (X−M) fall','Decrease in income of major trading partners: they import less → country\'s exports fall → X falls further','Both factors reduce the X−M component of AD → AD shifts left','Real output falls; price level may fall (or be less inflationary)','Examples: UK post-Brexit sterling depreciation (opposite effect); Japan and the 2008 US recession','Award max [6] (Level 2) if only one factor addressed']},
+
+{cat:'adas',diff:'medium',marks:10,type:'Explain',src:'M19 TZ2 · P1 Q4a',
+ q:'Explain the various phases of the business cycle.',
+ tags:['business cycle','boom','recession','slump','recovery','GDP trend'],
+ hints:['Define the business cycle (short-run fluctuations of real GDP around the long-run trend)','Draw business cycle diagram: real GDP on y-axis, time on x-axis; show trend line and cyclical fluctuations','Boom/Peak: GDP above trend; low unemployment; possible inflationary pressure; high business confidence','Recession: GDP falling for two consecutive quarters; rising unemployment; falling investment','Slump/Depression: GDP significantly below trend; high unemployment; deflation possible','Recovery: GDP rising; unemployment beginning to fall; investment picks up','Examples: 2008–09 Global Financial Crisis (recession); 1990s US expansion (boom)','NB: Diagrams of the business cycle may vary — be flexible in crediting']},
+
+{cat:'adas',diff:'medium',marks:10,type:'Explain',src:'N20 · P1 Q3a',
+ q:'Explain how a decrease in business confidence can affect the real GDP of an economy that is producing below the full employment level of output.',
+ tags:['business confidence','investment','aggregate demand','real GDP','deflationary gap'],
+ hints:['Define real GDP, business confidence, full employment level of output','Draw AD/AS diagram: economy already below Yfe; then AD shifts further left','Business confidence is a key determinant of investment (I)','↓ Business confidence → ↓ investment → ↓ AD (I is a component of AD = C+I+G+X−M)','AD shifts left → real GDP falls further below potential → deflationary gap widens','May trigger multiplier: falling AD reduces incomes → further fall in consumption → further AD reduction','Real-world: 2008–09 collapse in business confidence following Lehman Brothers bankruptcy']},
+
+{cat:'adas',diff:'hard',marks:15,type:'Evaluate',src:'N20 · P1 Q3b',
+ q:'Evaluate the view that a decrease in aggregate demand would always be deflationary.',
+ tags:['aggregate demand','deflation','Keynesian model','monetarist model','price level','wage rigidity'],
+ hints:['Define deflation (falling general price level) vs disinflation (falling rate of inflation)','In the neoclassical/monetarist model: AD falls → new equilibrium at lower price level → deflationary','In the Keynesian model (below full employment): AD falls but wage/price rigidity means price level stays flat → output falls but not prices','So the effect depends on: model used, where economy is operating on AS curve','Keynesian horizontal range: AD fall → only output falls, not prices','If AD falls when economy is at full employment → deflationary','Evaluate: "always" is too strong — price stickiness means deflation is NOT guaranteed when AD falls','Real-world: 2009 Great Recession — output fell but prices did not always deflate']},
+
+{cat:'adas',diff:'hard',marks:15,type:'Discuss',src:'M19 TZ2 · P1 Q4b',
+ q:'Discuss the view that economies will always return to the full employment level of output in the long run.',
+ tags:['full employment','long run','monetarist','Keynesian','self-correction','LRAS','AD'],
+ hints:['Define full employment and full employment level of output','Monetarist/Classical view: YES — wages and prices are flexible; below full employment → wages fall → SRAS shifts right → economy self-corrects to Yfe','Draw: AD falls → Keynesian/Monetarist SRAS adjustment back to Yfe','Keynesian view: NO — wages and prices are sticky downward; economy can remain stuck in deflationary gap','Keynes: "In the long run we are all dead" — government intervention needed','Evidence: Great Depression 1930s — US economy did NOT self-correct quickly; needed New Deal','Post-2008: many economies took years to recover, requiring fiscal/monetary stimulus','Evaluate: "always" is too strong; speed and completeness of return depends on institutional flexibility, labour market structure, government policy']},
+
+/* ── MONETARY POLICY (new) ── */
+{cat:'mon',diff:'medium',marks:10,type:'Explain',src:'N19 · P1 Q3a',
+ q:'Explain why a reduction in interest rates might lead to an increase in aggregate demand.',
+ tags:['interest rates','monetary policy','aggregate demand','consumption','investment'],
+ hints:['Define aggregate demand and interest rates','Draw AD/AS diagram: AD shifts right as interest rates fall','Lower interest rates: cheaper to borrow → households increase consumer spending (C) on credit','Lower rates: lower return on savings → less incentive to save → more spending','Lower rates: cheaper for firms to borrow → business investment (I) increases','Lower rates: currency may depreciate → exports cheaper abroad → net exports (X−M) rise','All components: C, I and X−M can rise → AD shifts right','Examples: Bank of England cutting rates post-2008; ECB negative rates 2014–2022']},
+
+{cat:'mon',diff:'hard',marks:15,type:'Evaluate',src:'N19 · P1 Q3b',
+ q:'Evaluate the view that expansionary monetary policy is the most effective way to achieve economic growth.',
+ tags:['expansionary monetary policy','economic growth','interest rates','AD','fiscal policy','supply-side'],
+ hints:['Expansionary monetary policy: lower interest rates (or QE) → ↑ C, ↑ I → AD shifts right → higher real GDP and growth','Advantages: quick to implement (central bank acts fast); no political interference (independent CB); incremental adjustments possible','Disadvantages: liquidity trap — rates at zero lower bound (ZLB); "pushing on a string" if confidence is low','Time lags: 12–18 months for full effect on economy','Does not address structural weaknesses (supply-side issues)','Alternative 1: Expansionary fiscal policy — more direct (government spending on infrastructure, tax cuts)','Alternative 2: Supply-side policies — raise productive capacity → sustainable long-term growth','Evaluate "most effective": context matters — in recession with room to cut rates, monetary policy effective; near ZLB, fiscal or supply-side better','Real-world: US near-zero rates 2008–2015; QE by Fed, ECB, BoE']},
+
+/* ── FISCAL POLICY (new) ── */
+{cat:'fis',diff:'hard',marks:15,type:'Evaluate',src:'M19 TZ1 · P1 Q3b',
+ q:'To what extent is expansionary fiscal policy the best policy to achieve a reduction in the rate of unemployment?',
+ tags:['fiscal policy','unemployment','expansionary','AD','multiplier','structural unemployment'],
+ hints:['Expansionary fiscal policy: ↑ G or ↓ T → AD shifts right → real GDP rises → demand for labour increases → unemployment falls','Effective for demand-deficient (cyclical) unemployment — addresses root cause (low AD)','Multiplier: initial spending has amplified effect on GDP and employment','Limitations: time lags in budget process; budget deficit and debt risk; crowding out','NOT effective for structural unemployment (skills mismatch) — need supply-side policies','NOT effective for frictional unemployment — need information/search improvements','Alternative: monetary policy (lower rates → ↑ investment → ↑ employment)','Alternative: market-based supply-side (flexible labour markets, training vouchers)','Evaluate "best": best for cyclical; inappropriate for structural; combination often optimal','NB: Must consider alternatives to reach Level 4']},
+
+/* ── SUPPLY-SIDE POLICIES (new) ── */
+{cat:'ssp',diff:'medium',marks:10,type:'Explain',src:'M19 TZ2 · P1 Q3a',
+ q:'Explain how increased investment by the government in education and training can affect both aggregate demand and aggregate supply.',
+ tags:['education investment','aggregate demand','LRAS','SRAS','human capital','supply-side'],
+ hints:['Define aggregate demand and aggregate supply','Draw two diagrams: AD/AS showing AD shifting right (short run); then LRAS shifting right (long run)','Short-run effect: government spending on education increases G component of AD → AD shifts right → higher real GDP','Long-run effect: education/training increases human capital → higher labour productivity → SRAS and LRAS shift right → lower unit costs and higher potential output','Both effects: short-run demand stimulus + long-run supply enhancement','Examples: Singapore\'s education investment; South Korea\'s rapid human capital development']},
+
+{cat:'ssp',diff:'hard',marks:15,type:'Evaluate',src:'M19 TZ2 · P1 Q3b',
+ q:'Evaluate the view that inflationary pressures in an economy are best reduced using supply-side policies.',
+ tags:['supply-side policy','inflation','cost-push','demand-pull','LRAS','monetary policy'],
+ hints:['Define inflation and supply-side policies (market-based: deregulation, privatisation; interventionist: education, subsidies)','Supply-side → LRAS shifts right → lower long-run price level → reduces inflationary pressure','Advantage for cost-push inflation: increases productive capacity, lowers unit costs → SRAS shifts right too','Advantage: no output sacrifice (unlike contractionary monetary/fiscal policy)','Also boosts employment and economic efficiency simultaneously','Disadvantages: long time lags (years before productivity gains materialise)','Less effective for demand-pull inflation (need demand-management: contractionary monetary or fiscal policy)','Alternative 1: Contractionary monetary policy (raise rates → ↓ AD → ↓ inflation) — faster but risks recession','Alternative 2: Contractionary fiscal policy (↑ taxes, ↓ G) — direct but politically difficult','Evaluate: supply-side best for cost-push and structural inflation; monetary/fiscal better for demand-pull']},
+
+/* ── DEVELOPMENT & GROWTH (new) ── */
+{cat:'dev',diff:'medium',marks:10,type:'Explain',src:'N19 · P1 Q4a',
+ q:'Explain, using a production possibilities curve (PPC) diagram, an increase in the actual output of an economy.',
+ tags:['PPC','actual output','economic growth','resource utilisation','AD/AS'],
+ hints:['Define production possibilities curve (PPC) and actual output','Draw PPC diagram: economy initially inside the PPC (unemployment/underutilisation)','Increase in actual output = movement toward the PPC (not a shift of the PPC itself)','Represents: previously unemployed or underused resources (labour, capital) being put to work','Caused by: higher AD, improved business confidence, lower interest rates','DISTINCT from increase in potential output (which shifts PPC outward)','Example: recovery from recession — 2009–2016 US recovery brought actual output toward potential']},
+
+{cat:'dev',diff:'medium',marks:10,type:'Explain',src:'M19 TZ1 · P1 Q4a',
+ q:'Explain the role of improved productivity in achieving economic growth.',
+ tags:['productivity','economic growth','LRAS','SRAS','unit costs','output per worker'],
+ hints:['Define productivity (output per unit of input, e.g., output per worker per hour)','Draw AD/AS diagram: improved productivity → SRAS shifts right (lower unit costs); also LRAS shifts right (higher productive capacity)','Short run: ↑ productivity → ↓ unit costs → SRAS right → higher real GDP + lower prices','Long run: ↑ productivity → ↑ LRAS → higher potential output','Source of productivity gains: better technology, education, training, improved management, economies of scale','Example: German manufacturing productivity; South Korea\'s TFP growth 1990s','NB: Must show understanding of productivity specifically — max Level 2 if productivity not clearly defined and applied']},
+
+{cat:'dev',diff:'hard',marks:15,type:'Discuss',src:'N19 · P1 Q4b',
+ q:'Discuss the view that economic growth always leads to a rise in living standards.',
+ tags:['economic growth','living standards','inequality','environmental costs','GDP','HDI'],
+ hints:['Define economic growth (rising real GDP) and living standards (HDI, income, welfare)','Draw PPC shifting outward or AD/AS showing growth','Economic growth CAN raise living standards: higher household incomes; more jobs; greater government tax revenue for public services','BUT: growth may NOT raise living standards if: distribution of income worsens (gains concentrated at top)','Environmental costs: pollution, climate change, depletion of natural resources reduce quality of life','Capital-intensive growth may increase unemployment despite rising GDP','Inflation may erode real income gains','"Kuznets curve": inequality may rise before it falls during development','Evaluate "always": too absolute — depends on quality, distribution, and environmental sustainability of growth','Real-world: China — rapid GDP growth but environmental and inequality concerns; Bhutan — GNH vs GDP']},
+
+{cat:'dev',diff:'hard',marks:15,type:'Discuss',src:'M19 TZ1 · P1 Q4b',
+ q:'Discuss the view that economic growth can only be achieved at the expense of other macroeconomic objectives such as a low and stable rate of inflation and equity in the distribution of income.',
+ tags:['economic growth','inflation','equity','macroeconomic objectives','trade-offs','Phillips curve'],
+ hints:['Define economic growth; identify key macroeconomic objectives: low inflation, equity, low unemployment, external balance','AD-driven growth: rising AD → real GDP rises but may cause demand-pull inflation (moving along SRAS)','Growth may also worsen income distribution if gains accrue mainly to capital owners (Piketty argument)','BUT: supply-side driven growth (LRAS right) → higher GDP + lower prices simultaneously (no inflation trade-off)','Growth can reduce poverty → improve equity (trickle-down); fiscal expansion for growth can fund redistribution','Long-run growth may improve environmental technology → less conflict with environmental objectives','Evaluate "only": too absolute — the type of growth matters; supply-side growth avoids many trade-offs','Real-world: 1990s US new economy — growth with low inflation; 2000s China — growth with rising inequality','NB: At least two objectives must be considered; Level 4 requires two objectives and evaluation']},
+
+/* ── POVERTY & EQUITY (new) ── */
+{cat:'pov',diff:'medium',marks:10,type:'Explain',src:'N20 · P1 Q4a',
+ q:'Explain how government expenditures are used to promote equity in the distribution of income.',
+ tags:['government expenditure','equity','income distribution','transfer payments','merit goods','Lorenz curve'],
+ hints:['Define government expenditure and equity (more equal distribution of income)','Optionally draw Lorenz curve: government spending shifts curve closer to line of equality','Transfer payments: welfare benefits, pensions, unemployment benefits → increase incomes of the poor','Free/subsidised merit goods: healthcare, education → reduce inequality of opportunity','Infrastructure spending in deprived areas → improves human capital and productivity of low-income groups','Progressive spending patterns: spending benefits lower-income groups proportionately more','Example: Scandinavian welfare states; UK NHS as equaliser of health outcomes']},
+
+{cat:'pov',diff:'hard',marks:15,type:'Evaluate',src:'N20 · P1 Q4b',
+ q:'Evaluate the impact on efficiency in the allocation of resources when the government uses taxation to promote equity.',
+ tags:['taxation','equity','allocative efficiency','Laffer curve','disincentives','progressivity'],
+ hints:['Define allocative efficiency (resources flow to highest-valued uses; P = MC) and equity','Progressive taxation reduces after-tax income inequality → improves equity','BUT: higher marginal tax rates → disincentive to work/invest → labour supply falls → allocative inefficiency','Laffer curve: beyond the revenue-maximising rate, higher taxes reduce tax revenue and output','Higher corporate taxes → less FDI → lower productive efficiency','Indirect taxes (VAT) to raise revenue: regressive → worsen equity; distort resource allocation','Capital gains taxes may discourage investment','Evaluation: trade-off between equity and efficiency is NOT fixed — depends on current tax levels, elasticities, design of tax','Nordic countries: high taxes AND high productivity → suggests trade-off is not inevitable','Evaluate: the efficiency loss depends on behavioural responses — empirical question']},
+
+/* ══════════════════════════════════════════════════════
+   PAPER 2 SUB-QUESTIONS (2019-2020) — DEFINITION [Easy]
+══════════════════════════════════════════════════════ */
+
+/* ── SUPPLY & DEMAND (P2 easy definitions) ── */
+{cat:'sd',diff:'easy',marks:2,type:'Define',src:'M19 · P2 Q1a(i)',
+ q:'Define the term "excess demand" as used in the context of the US tinplate steel market.',
+ tags:['excess demand','disequilibrium','shortage'],
+ hints:['Excess demand: situation where quantity demanded exceeds quantity supplied at a given price','Occurs when price is set below equilibrium','Results in a shortage','Example: US tinplate steel — domestic supply 1.2m tons vs demand 2.1m tons at the prevailing price']},
+
+/* ── UNEMPLOYMENT (P2 easy definitions) ── */
+{cat:'une',diff:'easy',marks:2,type:'Define',src:'M19 · P2 Q1a(ii)',
+ q:'Define the term "structural unemployment" as used in the context of the tin can manufacturing industry.',
+ tags:['structural unemployment','skills mismatch','industry decline'],
+ hints:['Structural unemployment: unemployment arising from a permanent change in the structure of the economy','Caused by: technological change, shift in demand for particular industries or skills','Workers lack the skills demanded by expanding industries → need retraining','Example: tin can factory workers losing jobs if plant shuts down; cannot easily shift to other sectors']},
+
+/* ── INTERNATIONAL TRADE (P2 easy definitions) ── */
+{cat:'trade',diff:'easy',marks:2,type:'Define',src:'N19 · P2 Q1a(i)',
+ q:'Define the term "quota" as used in the context of the Japan-EU trade agreement (JEEPA).',
+ tags:['quota','trade restriction','non-tariff barrier'],
+ hints:['Quota: a limit on the quantity (or sometimes value) of a good that can be imported or exported','A non-tariff barrier to trade','Effect: restricts supply of imported good → higher domestic price','Example: JEEPA — quota on camembert cheese imports into Japan, protecting domestic producers']},
+
+{cat:'trade',diff:'easy',marks:2,type:'Define',src:'N20 · P2 Q2a(i)',
+ q:'Define the term "tariff" as used in the context of US-China trade relations.',
+ tags:['tariff','trade protection','import duty'],
+ hints:['Tariff: a tax (duty) levied on imported goods','Raises the price of imports in the domestic market','Protects domestic producers from foreign competition; raises government revenue','Example: US imposed 25% tariff on Chinese steel imports']},
+
+{cat:'trade',diff:'easy',marks:2,type:'Define',src:'N20 · P2 Q2a(ii)',
+ q:'Define the term "trade war" as used in the context of US-China tariff escalation.',
+ tags:['trade war','retaliation','protectionism'],
+ hints:['Trade war: a situation where countries retaliate against each other by imposing escalating trade barriers (tariffs, quotas, etc.)','Each country tries to protect its domestic industries by restricting foreign goods','Results in reduced international trade; can harm both economies','Example: US tariffs on Chinese goods → China retaliates with ban on US soybeans']},
+
+/* ── EXCHANGE RATES (P2 easy definitions) ── */
+{cat:'exr',diff:'easy',marks:2,type:'Define',src:'M19 · P2 Q2a(i)',
+ q:'Define the term "appreciation" as used in the context of the Indian rupee.',
+ tags:['appreciation','exchange rate','currency value'],
+ hints:['Appreciation: an increase in the value of a currency relative to another currency in a floating exchange rate system','Currency appreciates when demand for it rises relative to supply','Effect: exports become more expensive; imports become cheaper','Example: Indian rupee appreciated against the dollar — made Indian exports less competitive']},
+
+{cat:'exr',diff:'easy',marks:2,type:'Define',src:'N19 · P2 Q2a(ii)',
+ q:'Define the term "current account deficit" as used in the context of Canada\'s balance of payments.',
+ tags:['current account deficit','balance of payments','trade deficit'],
+ hints:['Current account deficit: situation where the outflows of a country\'s current account (imports, income, transfers) exceed its inflows (exports, income received, transfers received)','Includes trade in goods + services + primary income + secondary income','A deficit means the country is spending more on foreign goods/services than it earns from exports','Example: Canada\'s current account deficit = 3.6% of GDP; importing more than exporting']},
+
+/* ── MONETARY POLICY (P2 easy definitions) ── */
+{cat:'mon',diff:'easy',marks:2,type:'Define',src:'M19 · P2 Q2a(ii)',
+ q:'Define the term "monetary policy" as used in the context of the Reserve Bank of India.',
+ tags:['monetary policy','interest rates','central bank','money supply'],
+ hints:['Monetary policy: actions taken by a central bank to influence the money supply and interest rates to achieve macroeconomic objectives','Tools: changing official interest rate, open market operations, reserve requirements, QE','Expansionary: lower rates → ↑ AD → ↑ growth; Contractionary: higher rates → ↓ inflation','Example: Reserve Bank of India adjusting interest rates to manage the rupee and inflation']},
+
+{cat:'mon',diff:'easy',marks:2,type:'Outline',src:'N19 · P2 Q2a(i)',
+ q:'Outline two roles of a country\'s central bank.',
+ tags:['central bank','monetary policy','lender of last resort','financial stability'],
+ hints:['Role 1: Setting official interest rate to achieve inflation target and support economic growth','Role 2: Lender of last resort — provides emergency funds to commercial banks to prevent banking collapse','Other valid roles: manage foreign exchange reserves; issue currency; supervise and regulate banks; manage government debt','Example: Bank of Canada raised rates to 0.75% to manage inflationary pressure']},
+
+/* ── DEVELOPMENT (P2 easy definitions) ── */
+{cat:'dev',diff:'easy',marks:2,type:'Define',src:'N19 · P2 Q1a(ii)',
+ q:'Define the term "sustainability" as used in the context of the Japan-EU trade agreement.',
+ tags:['sustainability','long-term development','environment'],
+ hints:['Sustainability: the ability to meet the needs of the present without compromising the ability of future generations to meet their own needs','Economic sustainability: growth that doesn\'t deplete resources or cause irreversible environmental damage','JEEPA context: trade agreement promotes cooperation AND environmental conservation for long-term growth','Link to SDGs and green economy']},
+
+{cat:'dev',diff:'easy',marks:2,type:'Define',src:'M19 · P2 Q3a(i)',
+ q:'Define the term "concessional long-term loans" as used in the context of Bhutan\'s hydropower funding.',
+ tags:['concessional loans','development finance','tied aid','low interest rate'],
+ hints:['Concessional loan: a loan offered at below-market interest rates and/or with a long repayment period','Provided by governments or multilateral institutions (World Bank, IMF) to developing countries','Better terms than commercial loans → eases debt servicing burden','Example: India financing Bhutan\'s hydropower projects with concessional loans — repaid from electricity export revenues']},
+
+{cat:'dev',diff:'easy',marks:2,type:'Define',src:'M19 · P2 Q3a(ii)',
+ q:'Define the term "real gross domestic product (GDP)" as used in the context of Bhutan\'s growth.',
+ tags:['real GDP','GDP','inflation adjustment','national income'],
+ hints:['Real GDP: the total value of all goods and services produced in a country in a given period, adjusted for inflation','Distinction: nominal GDP uses current prices; real GDP uses constant base-year prices → removes effect of price changes','Measures changes in actual productive output, not just changes in price level','Example: Bhutan\'s real GDP growth expected at 11.7% by 2019 — reflects genuine expansion of output']},
+
+{cat:'dev',diff:'easy',marks:2,type:'Define',src:'N19 · P2 Q3a(i)',
+ q:'Define the term "micro-credit" as used in the context of economic development in Côte d\'Ivoire.',
+ tags:['micro-credit','microfinance','poverty','small loans','entrepreneurship'],
+ hints:['Micro-credit: the provision of small loans to low-income individuals or small businesses who lack access to conventional banking','Enables entrepreneurship and investment for those in poverty','Key characteristic: small loan size, often targeted at women in developing countries','Example: Grameen Bank model; micro-credit for cocoa farmers or women entrepreneurs in Côte d\'Ivoire']},
+
+{cat:'dev',diff:'easy',marks:2,type:'Define',src:'N19 · P2 Q3a(ii)',
+ q:'Define the term "gross national income (GNI)" as used in Table 3 for Côte d\'Ivoire.',
+ tags:['GNI','national income','income per capita','development measure'],
+ hints:['GNI: the total income earned by a country\'s residents, regardless of where production takes place','GNI = GDP + net income from abroad (wages, profits, rents earned abroad minus those earned by foreigners domestically)','GNI per capita = GNI ÷ population — used as measure of average living standards','Example: Table 3 shows female GNI per capita (PPP) = $2,136 vs male $4,155 — reveals gender income gap in Côte d\'Ivoire']},
+
+{cat:'dev',diff:'easy',marks:2,type:'Define',src:'N19 · P2 Q4a(i)',
+ q:'Define the term "official development assistance (ODA)" as used in the context of Nepal.',
+ tags:['ODA','foreign aid','development assistance','grants','loans'],
+ hints:['ODA: grants or concessional loans from government donors (bilateral) or multilateral institutions to developing countries','Purpose: promote economic development and welfare in recipient countries','Must be concessional (grant element ≥ 25%)','Example: foreign aid to Nepal for post-earthquake reconstruction of bridges, roads, infrastructure']},
+
+{cat:'dev',diff:'easy',marks:2,type:'Define',src:'N19 · P2 Q4a(ii)',
+ q:'Define the term "infrastructure" as used in the context of Nepal\'s reconstruction needs.',
+ tags:['infrastructure','economic development','public capital','transport'],
+ hints:['Infrastructure: the basic physical and organisational structures and facilities needed for an economy to function','Includes: roads, bridges, railways, airports, electricity grids, water supply, telecommunications','Essential for economic activity — reduces transport costs, connects markets, enables trade','Example: Nepal\'s earthquake damaged bridges and roads → reduced production possibilities → ODA needed for reconstruction']},
+
+{cat:'dev',diff:'easy',marks:2,type:'Define',src:'N20 · P2 Q3a(ii)',
+ q:'Define the term "human capital" as used in the context of economic development in Pakistan.',
+ tags:['human capital','education','skills','productivity','development'],
+ hints:['Human capital: the skills, knowledge, experience, and health of a workforce that make them productive','Built through: education, training, healthcare, on-the-job learning','Investment in human capital → higher productivity → higher GDP per capita → economic development','Example: Pakistan needs better education quality and female participation to build human capital for economic growth']},
+
+/* ── FISCAL POLICY (P2 easy definitions) ── */
+{cat:'fis',diff:'easy',marks:2,type:'Define',src:'N20 · P2 Q1a(i)',
+ q:'Define the term "budget deficit" as used in the context of Argentina\'s fiscal situation.',
+ tags:['budget deficit','fiscal policy','government borrowing','national debt'],
+ hints:['Budget deficit: when government expenditure exceeds government revenue in a given period','Government must borrow to finance the deficit → increases national debt','Can be cyclical (recession reduces tax revenues) or structural (persistent regardless of economic cycle)','Example: Argentina\'s persistent budget deficit funded by overseas borrowing → contributed to peso crisis']},
+
+/* ══════════════════════════════════════════════════════
+   PAPER 2 DIAGRAM-BASED QUESTIONS [Medium — 4 marks]
+══════════════════════════════════════════════════════ */
+
+/* ── SUPPLY & DEMAND ── */
+{cat:'sd',diff:'medium',marks:4,type:'Explain (Diagram)',src:'M19 · P2 Q1b',
+ q:'Using a supply and demand diagram and data from the text, explain how a "disequilibrium in the domestic US tinplate steel market" would occur if there were no imports.',
+ tags:['disequilibrium','excess demand','tinplate steel','D&S diagram'],
+ hints:['Draw D&S diagram for US tinplate steel','Label equilibrium at intersection of D and S curves','Without imports: supply is only domestic (1.2m tons) < demand (2.1m tons) at current price','At market price: excess demand (shortage) of ~0.9m tons exists','Show price line where Qd > Qs → disequilibrium (excess demand)','In a free market, price would rise to clear the market; tariff or import restriction prevents market-clearing']},
+
+/* ── INTERNATIONAL TRADE ── */
+{cat:'trade',diff:'medium',marks:4,type:'Explain (Diagram)',src:'M19 · P2 Q1c',
+ q:'Using an international trade diagram, explain the effect of a tariff on the imports of tinplate steel into the US.',
+ tags:['tariff','international trade diagram','consumer surplus','producer surplus','welfare loss'],
+ hints:['Draw international trade diagram: domestic S and D, world supply (horizontal at Pw)','With no tariff: imports = Qd − Qs (gap between domestic demand and supply at Pw)','Tariff shifts world supply up to Pw + tariff → domestic price rises','Effect: domestic production rises (from Qs to Qs2); consumption falls (from Qd to Qd2); imports fall','Consumer surplus falls; domestic producer surplus rises; government earns tariff revenue','Net welfare loss = two deadweight triangles']},
+
+{cat:'trade',diff:'medium',marks:4,type:'Explain (Diagram)',src:'N19 · P2 Q1c',
+ q:'Using an international trade diagram, explain the likely impact of Japan "removing the current 30% tariff" on the level of cheddar cheese imports.',
+ tags:['tariff removal','free trade','imports','consumer surplus','cheese'],
+ hints:['Draw international trade diagram: domestic S and D; world price + 30% tariff; world price without tariff','Removing tariff: price falls from (Pw + tariff) to Pw','Imports increase (from Q2−Q1 to Q4−Q3)','Domestic production falls; consumption rises','Consumer surplus increases; domestic producer surplus falls; government loses tariff revenue','Net welfare gain to Japan overall (free trade improves allocative efficiency)']},
+
+{cat:'trade',diff:'medium',marks:4,type:'Explain (Diagram)',src:'N20 · P2 Q2b',
+ q:'Using an international trade diagram, explain the outcome on US producers of the introduction of a tariff on imports from China.',
+ tags:['tariff','domestic producers','producer surplus','US-China trade war'],
+ hints:['Draw international trade diagram: domestic D and S; horizontal world supply at Pw','Tariff shifts world supply to Pw + tariff → domestic price rises','Domestic production increases (from Qs to Qs2) as US producers can now profitably produce more','Domestic producer surplus increases — this is the key benefit for US producers','Domestic consumers lose surplus (pay higher price); government gains tariff revenue','Net welfare effect: deadweight loss overall, but producers gain']},
+
+/* ── EXCHANGE RATES ── */
+{cat:'exr',diff:'medium',marks:4,type:'Explain (Diagram)',src:'M19 · P2 Q2c',
+ q:'Using an exchange rate diagram, explain how reducing interest rates might lead to a fall in the value of the rupee.',
+ tags:['exchange rate','interest rates','capital outflows','depreciation','rupee'],
+ hints:['Draw forex diagram: exchange rate on y-axis; quantity of rupees on x-axis','Lower interest rates in India → Indian financial assets less attractive to foreign investors','Capital outflows → investors sell rupees to buy other currencies','Supply of rupees increases (supply curve shifts right) → rupee depreciates','Alternative: demand for rupees falls (D shifts left) if international investors pull out','Show: new lower equilibrium exchange rate for the rupee']},
+
+{cat:'exr',diff:'medium',marks:4,type:'Explain (Diagram)',src:'N19 · P2 Q2c',
+ q:'Using an exchange rate diagram, explain one reason for the appreciation of the Canadian dollar.',
+ tags:['exchange rate','appreciation','interest rates','Canada','capital inflows'],
+ hints:['Draw forex diagram for Canadian dollar (CAD)','Bank of Canada raised interest rates from 0.5% to 0.75%','Higher interest rates attract foreign investors seeking better returns → they buy CAD','Demand for CAD increases (D curve shifts right)','New equilibrium: higher exchange rate → CAD appreciates against USD','Also: strong GDP growth data and optimism boosted demand for CAD']},
+
+{cat:'exr',diff:'medium',marks:4,type:'Explain (Diagram)',src:'N20 · P2 Q1b',
+ q:'Using an exchange rate diagram, explain how raising interest rates would "stop the fall in the peso\'s value".',
+ tags:['exchange rate','interest rates','Argentina','peso','currency intervention'],
+ hints:['Draw forex diagram: S and D for Argentine peso','Peso falling: supply of pesos > demand → exchange rate declining','Raising interest rates (to 40%): attracts foreign capital inflows → investors buy pesos to earn high returns','Demand for peso increases (D shifts right) → peso stabilises or appreciates','Also: central bank can sell foreign reserves (USD) to buy pesos → D for peso rises further','Diagram should show: D right shift → higher (or stable) exchange rate']},
+
+/* ── AD/AS MODEL ── */
+{cat:'adas',diff:'medium',marks:4,type:'Explain (Diagram)',src:'M19 · P2 Q2b',
+ q:'Using an AD/AS diagram, explain how increased import expenditure might affect economic growth in the Indian economy.',
+ tags:['aggregate demand','imports','net exports','AD/AS','economic growth'],
+ hints:['Draw AD/AS diagram','Increased import expenditure → M rises → net exports (X−M) fall → AD decreases (AD = C+I+G+(X−M))','AD shifts left → real GDP falls → economic growth slows or falls','May also worsen current account deficit → further pressure on exchange rate','Counter-effect: if imports are productive capital goods → can improve future LRAS/SRAS','In short run: rising imports reduce AD and growth']},
+
+{cat:'adas',diff:'medium',marks:4,type:'Explain (Diagram)',src:'N19 · P2 Q1b',
+ q:'Using an AD/AS diagram, explain the impact of the Japan-EU trade agreement (JEEPA) on Japan\'s economic growth.',
+ tags:['AD/AS','trade agreement','exports','economic growth','JEEPA'],
+ hints:['Draw AD/AS diagram for Japan','JEEPA: EU will lower tariffs on Japanese cars → Japanese exports to EU increase','Net exports (X−M) component of AD rises → AD shifts right','Real GDP increases → economic growth','May also attract more FDI as Japan gains market access → investment (I) component of AD rises','LRAS may eventually shift right if trade boosts productive capacity']},
+
+{cat:'adas',diff:'medium',marks:4,type:'Explain (Diagram)',src:'N20 · P2 Q1c',
+ q:'Using an AD/AS diagram, explain how the peso\'s weakness is contributing to inflation in Argentina.',
+ tags:['exchange rate','depreciation','cost-push','AD/AS','inflation','peso'],
+ hints:['Draw AD/AS diagram for Argentina','Peso depreciation → imported goods (especially oil) become more expensive in peso terms','Imported inputs cost more → production costs rise → SRAS shifts left (cost-push inflation)','SRAS shifts left → price level rises (inflation), real GDP falls','Also: cheaper peso may stimulate exports → AD shifts right → demand-pull inflation too','Both channels contribute to higher price level in Argentina']},
+
+{cat:'adas',diff:'medium',marks:4,type:'Explain (Diagram)',src:'N20 · P2 Q2c',
+ q:'Using an AD/AS diagram, explain the desired impact of China\'s "eased monetary policy" on its economic growth.',
+ tags:['monetary easing','AD/AS','China','economic growth','interest rates'],
+ hints:['Draw AD/AS diagram for China','Eased monetary policy: lower interest rates / easier credit conditions','Lower rates → cheaper borrowing → businesses invest more (I rises); consumers spend more (C rises)','AD shifts right → real GDP increases → economic growth accelerates','Desired effect: prevent sharp economic slowdown amid trade war pressures','Also: subsidised lending to small firms directly boosts their investment']},
+
+{cat:'adas',diff:'medium',marks:4,type:'Explain (Diagram)',src:'N19 · P2 Q2b',
+ q:'Using an AD/AS diagram, explain the likely impact on the Canadian economy of the increase in the official interest rate.',
+ tags:['interest rate increase','contractionary','AD/AS','Canada','monetary policy'],
+ hints:['Draw AD/AS diagram for Canada','Bank of Canada raised rate from 0.5% to 0.75%','Higher rates → more expensive borrowing → consumption (C) and investment (I) fall','Net exports may also fall if higher rates attract foreign capital → CAD appreciates → exports less competitive','AD shifts left → lower inflationary pressure; real GDP growth slows slightly','Canada\'s motivation: GDP growth above potential (3.5%) → preemptive tightening to prevent inflation']},
+
+{cat:'adas',diff:'medium',marks:4,type:'Explain (Diagram)',src:'N19 · P2 Q4c',
+ q:'Using a circular flow of income diagram (in an open economy), explain the impact that increased export revenues could have on Nepal\'s national income.',
+ tags:['circular flow','exports','injections','national income','multiplier'],
+ hints:['Draw circular flow of income for open economy: households, firms; injections (I, G, X) and leakages (S, T, M)','Increased export revenues = increase in injection (X) into the circular flow','More export revenues → firms earn more → pay higher wages/dividends → households have more income','Multiplier effect: initial export injection leads to multiple rounds of spending → national income rises by a multiple','Show: X ↑ → injection increases → circular flow expands → national income (GDP) rises']},
+
+/* ── PRICE FLOORS ── */
+{cat:'pf',diff:'medium',marks:4,type:'Explain (Diagram)',src:'N19 · P2 Q3b',
+ q:'Using a demand and supply diagram, explain how a decrease in the minimum price of cocoa would affect the welfare loss associated with the minimum price in Côte d\'Ivoire.',
+ tags:['minimum price','price floor','welfare loss','deadweight loss','cocoa'],
+ hints:['Draw D&S diagram with minimum price (price floor) above equilibrium','At original minimum price: surplus (Qs > Qd) → deadweight loss triangle','Decrease in minimum price: minimum price moves closer to equilibrium → smaller surplus','Welfare loss (deadweight loss triangle) decreases as the gap between Qs and Qd narrows','If minimum price falls to equilibrium: no deadweight loss, no surplus','Show: two diagrams or one diagram with old and new minimum prices']},
+
+{cat:'pf',diff:'medium',marks:4,type:'Explain (Diagram)',src:'N19 · P2 Q3c',
+ q:'Using a demand and supply diagram, explain why the government\'s decision to "cut the minimum price" paid to cocoa farmers is likely to decrease farmers\' incomes.',
+ tags:['minimum price','price floor','farmer income','cocoa','total revenue'],
+ hints:['Draw D&S diagram with minimum price above equilibrium','At minimum price: farmers receive higher price but sell less (Qd < Qs, government must buy surplus)','"Cut the minimum price": if cut to below equilibrium or closer to equilibrium','Lower price × lower or same quantity sold → total revenue (income) for farmers falls','If price floor is still above equilibrium: price falls → revenue = P × Qd → if PED inelastic, revenue falls','Show: farmer income = price × quantity sold; both may fall or price fall dominates income effect']},
+
+/* ── EXTERNALITIES ── */
+{cat:'ext',diff:'medium',marks:4,type:'Explain (Diagram)',src:'N20 · P2 Q3c',
+ q:'Using an externalities diagram, explain how "greater access to education" for girls in Pakistan could reduce market failure.',
+ tags:['positive externality','education','MSB','MPB','Pakistan','gender equality'],
+ hints:['Draw positive consumption externality diagram','Education generates positive externalities: educated girls become more productive workers; benefit families, communities, economy beyond just the individual','MPB (individual benefit) < MSB (social benefit) → market under-provides education','At free market: quantity of education = Qm < socially optimal Qs','Greater access to education: government provision or subsidy → quantity of education increases toward Qs','Welfare loss between Qm and Qs is reduced → market failure corrected']},
+
+/* ── POVERTY & EQUITY ── */
+{cat:'pov',diff:'medium',marks:4,type:'Explain (Diagram)',src:'M19 · P2 Q4c',
+ q:'Using a poverty cycle diagram, explain how increased foreign direct investment (FDI) might break the poverty cycle in Peru.',
+ tags:['poverty cycle','FDI','investment','human capital','virtuous cycle','Peru'],
+ hints:['Draw poverty cycle: low income → low savings → low investment → low productivity → low income','FDI breaks the cycle: FDI = injection of foreign capital, bypassing the low savings/low investment trap','FDI → new factories, technology transfer, infrastructure → higher productivity','Higher productivity → higher wages for local workers → higher incomes → escape poverty threshold','Also: FDI creates jobs → employment rises → incomes rise → less poverty','Example: Chinese mining FDI in Peru → GDP growth → absolute poverty fell from 27.6% to 9%']},
+
+{cat:'pov',diff:'medium',marks:4,type:'Explain (Diagram)',src:'N20 · P2 Q3b',
+ q:'Using a poverty cycle diagram, explain how the government of Pakistan could intervene to "break out of the poverty cycle".',
+ tags:['poverty cycle','Pakistan','government intervention','education','FDI','virtuous cycle'],
+ hints:['Draw poverty cycle: low income → low savings → low investment → low human capital → low productivity → low income','Government breaks cycle through: investment in education (builds human capital → higher productivity)','Infrastructure investment: reduces costs, improves connectivity → higher productivity and incomes','Attract FDI: foreign capital supplements low domestic savings → investment rises','Conditional cash transfers: raise low incomes directly → enable families to invest in children\'s education','IMF loan funds → break savings/investment trap → virtuous cycle can begin']},
+
+/* ══════════════════════════════════════════════════════
+   PAPER 2 EXTENDED EVALUATION QUESTIONS [Hard — 8 marks]
+══════════════════════════════════════════════════════ */
+
+{cat:'trade',diff:'hard',marks:8,type:'Discuss',src:'M19 · P2 Q1d',
+ q:'Using information from the text and your knowledge of economics, discuss possible economic impacts of the tariff on tinplate steel on different stakeholders.',
+ tags:['tariff','tinplate steel','stakeholders','trade protection','consumer','producer','government'],
+ hints:['Tariff on tinplate steel imports raises domestic price of tinplate → increases input costs for US tin can manufacturers','Negative impact on tin can manufacturers: competitive disadvantage vs other packaging (plastic, glass) not subject to tariff','Domestic tinplate steel producers benefit: protected from import competition → higher output and revenue','US government: gains tariff revenue','Consumers: may face higher food prices (canned food costs rise); especially harmful for the 42m low-income Americans dependent on canned food','Workers: 10,000 tin can manufacturing jobs at risk; domestic steel jobs protected','Overall evaluation: tariff designed to protect steel producers but harms downstream industries (can makers); net welfare effect likely negative','Consider: whether domestic tinplate production can realistically fill the supply gap (was only 57% of demand)']},
+
+{cat:'exr',diff:'hard',marks:8,type:'Discuss',src:'M19 · P2 Q2d',
+ q:'Using information from the text and data, discuss the possible economic consequences of the increasing value of the rupee for India\'s inflation rate, employment, economic growth and current account balance.',
+ tags:['exchange rate','appreciation','India','rupee','inflation','current account','employment'],
+ hints:['Rupee appreciation → imports cheaper → cost-push deflation → inflation rate falls (positive for price stability)','Rupee appreciation → exports more expensive → Indian exporters less competitive → export revenues fall','Lower exports → ↓ GDP growth; export sectors (e.g., IT services, manufacturing) may cut employment','Current account deteriorates: exports fall, imports rise → trade deficit widens','Manufacturing employment: export-oriented sectors (textiles, pharmaceuticals) may lay off workers as orders fall','BUT: lower import costs benefit Indian firms that use imported inputs → production costs fall','Discuss: not all effects are negative; net impact depends on relative magnitudes and India\'s export/import elasticities','Policy implication: India may prefer to keep rupee competitive for export-led growth']},
+
+{cat:'dev',diff:'hard',marks:8,type:'Evaluate',src:'M19 · P2 Q3d',
+ q:'Using information from the text and your knowledge of economics, evaluate the government policies being used to promote economic development in Bhutan.',
+ tags:['Bhutan','economic development','hydropower','education','FDI','tied aid','debt'],
+ hints:['Hydropower investment: major government intervention; generates export revenues (80% to India); GDP growth projected at 11.7%','BUT: funded by concessional loans → Bhutan is now second-most indebted nation in Asia (118% of GDP)','Tied aid from India: conditions include Indian companies leading projects → may not reflect Bhutan\'s cheapest/best options; dependence on India','University education expansion: increases human capital → positive for long-term growth; but graduates outnumber government jobs → educated unemployment','Tourism promotion: diversifies economy; generates foreign exchange; sustainable income source','Deregulation/FDI attraction: reduces red tape → may attract foreign investment → economic diversification','Agriculture promotion: leverages climate advantage for fruit export → potentially sustainable sector','Evaluation: strong GDP growth but high debt is a risk; dependence on India (tied aid) limits policy autonomy; education without private sector jobs is counterproductive; need to balance state-led and market-based development']},
+
+{cat:'dev',diff:'hard',marks:8,type:'Evaluate',src:'M19 · P2 Q4d',
+ q:'Using information from the text and data, evaluate the factors that may allow Peru to continue to achieve high rates of economic growth in the future.',
+ tags:['Peru','economic growth','FDI','mining','China','free trade','structural reform'],
+ hints:['Favourable factors: rich natural resource base (copper, gold, silver, oil) → commodity export revenues','Strong FDI from China (e.g., US$2bn hydroelectric plant purchase) → capital investment without domestic savings needed','17 free trade agreements including US, China, EU → access to large markets','Macroeconomic stability: low inflation (avg 2.9%), falling current account deficit (4.9% → 2.8% GDP)','Government plans to increase public investment as mining slows → fiscal stimulus','Risk factors: over-dependence on commodities → vulnerable to price cycles (e.g., Chinese slowdown)','Weak private investment: private sector needs to diversify beyond mining','Environmental concerns: deregulation opposed by unions and environmental groups → social conflict','Informal economy: large size limits tax revenue and productivity','Evaluation: Peru has strong foundations but excessive commodity dependence is a vulnerability; structural reforms (productivity, reduce informal sector) needed for sustainable growth']},
+
+{cat:'exr',diff:'hard',marks:8,type:'Discuss',src:'N19 · P2 Q2d',
+ q:'Using information from the text and data, discuss the possible effects on the Canadian economy of the strengthening of the Canadian dollar against the US dollar.',
+ tags:['exchange rate','appreciation','Canada','exports','imports','current account','inflation'],
+ hints:['CAD appreciation → Canadian exports more expensive in USD terms → US buyers may switch to cheaper US producers','Motor vehicles and parts (18% of exports) and energy (14%) particularly affected','US is 76% of Canada\'s export destination → very sensitive to USD/CAD exchange rate','Benefits: cheaper imports for Canadian consumers; lower inflation (cheaper USD goods)','Stronger CAD → more Canadians travel to US → spending abroad increases → negative for Canadian domestic consumption','Current account deficit may worsen: falling export revenues + rising import spending','BUT: effects lag (months before consumers see impact per the economist quote)','Industries vary: energy exporters hurt; firms with USD-denominated costs benefit','Evaluation: net impact likely negative for growth given US is 76% of exports; central bank raised rates expecting manageable impact; watch current account']},
+
+{cat:'dev',diff:'hard',marks:8,type:'Discuss',src:'N19 · P2 Q3d',
+ q:'Using information from the text and data, discuss how the empowerment of women could help Côte d\'Ivoire to achieve economic development.',
+ tags:['women empowerment','gender equality','economic development','human capital','Côte d\'Ivoire','HDI'],
+ hints:['Table 3 data: female GNI/capita = $2,136 vs male $4,155; female mean years schooling = 3.9 vs 6.1; female HDI = 0.421 vs male 0.517','Labour force participation: female 52.4% vs male 80.9% → significant untapped labour potential','Empowerment channels: education for girls → higher human capital → higher productivity → higher incomes','Micro-credit for women: enables female entrepreneurship → income generation → reduces poverty','Women in parliament (9.2%): greater representation → policies better address female needs (healthcare, childcare)','Economic growth: increasing female labour force participation could significantly boost GDP','Multiplier on families: educated women invest more in children\'s health and education → virtuous cycle across generations','Discuss limitations: cultural barriers, social norms may resist change; lack of infrastructure (schools, childcare)','Evaluation: gender equality is not just morally important but economically strategic; closing gender gaps boosts development across all HDI dimensions']},
+
+{cat:'dev',diff:'hard',marks:8,type:'Evaluate',src:'N19 · P2 Q4d',
+ q:'Using information from the text and your knowledge of economics, evaluate the view that Nepal should encourage foreign direct investment (FDI) in order to achieve economic development.',
+ tags:['FDI','Nepal','economic development','capital','technology transfer','ODA','infrastructure'],
+ hints:['Nepal post-earthquake: bridges, roads, infrastructure damaged → production possibilities constrained','FDI benefits: brings capital (bypasses low domestic savings); technology transfer; management skills; employment creation','Increases productive capacity → PPC shifts outward → higher potential output','FDI in tourism, manufacturing, energy → diversification beyond subsistence agriculture','BUT: FDI may create dependency; profit repatriation → leakages from circular flow','FDI attracted to stable governance, good infrastructure, educated workforce — Nepal may struggle to offer these post-earthquake','Alternatives to FDI: ODA (grants with no repatriation); domestic savings mobilisation; remittances (significant for Nepal)','Evaluate: FDI is one important tool but not sufficient alone; Nepal needs infrastructure, governance reform, education to make FDI beneficial; ODA may be more appropriate given post-disaster context']},
+
+{cat:'exr',diff:'hard',marks:8,type:'Discuss',src:'N20 · P2 Q1d',
+ q:'Using information from the text and data, discuss the view that Argentina should keep its floating exchange rate system.',
+ tags:['floating exchange rate','Argentina','peso','IMF','current account','inflation'],
+ hints:['Arguments FOR floating: automatic stabiliser — depreciation makes exports cheaper → improves trade balance → reduces current account deficit','Floating allows monetary policy independence → central bank can set rates for domestic needs (not just to defend rate)','IMF explicitly supports floating rate; "exchange rate should continue to be determined by market forces"','Helped narrow current account deficit as peso float allowed → from >5% GDP to lower','Arguments AGAINST floating: peso depreciation → imported oil prices rise → higher inflation (already 50%)','High volatility → uncertainty → discourages investment; falling real incomes → recession risk','Argentina\'s persistent inflation suggests peso expected to depreciate continuously → capital flight','Alternatives: managed float (use reserves to reduce volatility); currency board or dollarisation to restore credibility','Evaluate: floating is theoretically appropriate but Argentina\'s institutional credibility problem makes depreciation spiral self-fulfilling; IMF loan + fiscal adjustment needed alongside floating rate']},
+
+{cat:'trade',diff:'hard',marks:8,type:'Discuss',src:'N20 · P2 Q2d',
+ q:'Using information from the text and data, discuss the arguments for and against the trade protection measures imposed by the US on China.',
+ tags:['trade protection','US-China','tariff','trade war','WTO','protectionism'],
+ hints:['US arguments FOR tariffs: protect US steel/aluminium workers from unfair Chinese competition; reduce trade deficit with China; address intellectual property theft and unfair subsidies','Short-run benefit: domestic production rises, jobs protected in steel sector','Rebalance trade: reduce US current account deficit','Arguments AGAINST: retaliatory tariffs from China (US soybeans banned) → US farmers hurt','Global trade slowdown: other countries (Germany, Japan, South Korea) also harmed by reduced Chinese demand','Higher prices for US consumers and downstream industries using Chinese inputs (e.g., Apple, Caterpillar profits fall)','Business confidence falls → investment declines','WTO rules potentially violated → undermines rules-based international trade system','Long-run cost: inefficient US industries protected → no incentive to improve productivity','Evaluation: trade protection may protect some US workers short-term but causes broader economic damage; more effective to use WTO dispute mechanisms and negotiate structural reforms from China']},
+
+{cat:'dev',diff:'hard',marks:8,type:'Evaluate',src:'N20 · P2 Q3d',
+ q:'Using information from the text and data, evaluate the potential impact of the IMF and World Bank on economic development in Pakistan.',
+ tags:['IMF','World Bank','Pakistan','economic development','conditionality','poverty','debt'],
+ hints:['IMF loan (potential US$50bn-scale): restores confidence → enables Pakistan to attract FDI → growth and poverty reduction','IMF conditions: deregulation, privatisation, cut budget deficit, raise indirect taxes, reduce subsidies → promotes macroeconomic stability','IMF concern: Pakistan has had 21 agreements with limited long-term success → conditionality not consistently met','Indirect taxes (VAT) → regressive → hurts the poor disproportionately → worsens equity','Cutting government spending → reduced social services → short-term negative impact on poor','World Bank: finances education, renewable energy in poor regions → human capital, infrastructure → long-term development','Critics: World Bank projects not making significant difference; hydroelectric dams → environmental damage','Female exclusion from education and labour force → wasted human capital → limits development potential','Evaluate: IMF good for macroeconomic stabilisation but conditionality can conflict with poverty reduction goals; World Bank better aligned with long-run development; tension between short-run adjustment and long-run development; sustainability requires Pakistan to develop internal tax capacity and governance']},
+
 ]; // end questions
 
 /* ══════════════════════════════════ STATE ══════════════════════════════════ */
