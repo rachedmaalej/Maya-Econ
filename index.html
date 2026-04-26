@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IB Economics SL — Question Bank</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #f5f2ec;
+  --surface:   #ffffff;
+  --surface2:  #f0ece4;
+  --border:    #ddd8ce;
+  --text:      #1c1917;
+  --muted:     #78716c;
+  --accent:    #92600a;
+  --accent-lt: #fef3c7;
+  --easy:      #166534;
+  --easy-bg:   #dcfce7;
+  --medium:    #1d4ed8;
+  --medium-bg: #dbeafe;
+  --hard:      #c2410c;
+  --hard-bg:   #ffedd5;
+  --vhard:     #b91c1c;
+  --vhard-bg:  #fee2e2;
+  --shadow:    0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,.1), 0 2px 4px rgba(0,0,0,.06);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ══════════════════════════════════
+   HEADER
+══════════════════════════════════ */
+header {
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  box-shadow: 0 1px 4px rgba(0,0,0,.06);
+}
+.header-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 1.1rem 2rem 0;
+}
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.branding { display: flex; align-items: baseline; gap: .6rem; flex-wrap: wrap; }
+.branding h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.45rem;
+  color: var(--accent);
+  letter-spacing: -.02em;
+  line-height: 1;
+}
+.branding-sep { color: var(--border); }
+.branding p {
+  color: var(--muted);
+  font-size: .72rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.stats-row { display: flex; gap: .4rem; align-items: center; flex-wrap: wrap; }
+.stat-pill {
+  display: flex; align-items: center; gap: .28rem;
+  padding: .2rem .6rem;
+  border-radius: 20px;
+  font-size: .67rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  white-space: nowrap;
+}
+.stat-pill.all { background: var(--surface2); color: var(--muted);   border: 1px solid var(--border); }
+.stat-pill.e   { background: var(--easy-bg);   color: var(--easy);   border: 1px solid #bbf7d0; }
+.stat-pill.m   { background: var(--medium-bg); color: var(--medium); border: 1px solid #bfdbfe; }
+.stat-pill.h   { background: var(--hard-bg);   color: var(--hard);   border: 1px solid #fed7aa; }
+.stat-pill.v   { background: var(--vhard-bg);  color: var(--vhard);  border: 1px solid #fecaca; }
+.dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+
+/* Controls */
+.controls {
+  display: flex;
+  gap: .6rem;
+  margin-bottom: .8rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.search {
+  flex: 1;
+  min-width: 180px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: .46rem .9rem;
+  color: var(--text);
+  font-size: .84rem;
+  font-family: 'Inter', sans-serif;
+  transition: border-color .18s, box-shadow .18s;
+}
+.search:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(146,96,10,.1);
+  background: #fff;
+}
+.search::placeholder { color: var(--muted); }
+
+.diff-filters { display: flex; gap: .3rem; flex-wrap: wrap; }
+.df {
+  padding: .36rem .8rem;
+  border-radius: 20px;
+  border: 1.5px solid;
+  cursor: pointer;
+  font-size: .71rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  transition: all .15s;
+  letter-spacing: .03em;
+  line-height: 1;
+}
+.df.all-d  { border-color: var(--border); background: transparent; color: var(--muted); }
+.df.easy-d { border-color: #86efac;       background: transparent; color: var(--easy); }
+.df.med-d  { border-color: #93c5fd;       background: transparent; color: var(--medium); }
+.df.hard-d { border-color: #fdba74;       background: transparent; color: var(--hard); }
+.df.vh-d   { border-color: #fca5a5;       background: transparent; color: var(--vhard); }
+.df.active.all-d  { background: var(--text);   color: #fff; border-color: var(--text); }
+.df.active.easy-d { background: var(--easy);   color: #fff; border-color: var(--easy); }
+.df.active.med-d  { background: var(--medium); color: #fff; border-color: var(--medium); }
+.df.active.hard-d { background: var(--hard);   color: #fff; border-color: var(--hard); }
+.df.active.vh-d   { background: var(--vhard);  color: #fff; border-color: var(--vhard); }
+
+/* ── CATEGORY TABS — flex-wrap so they never scroll horizontally ── */
+.cat-nav {
+  display: flex;
+  flex-wrap: wrap;       /* key change: tabs wrap to new rows */
+  border-top: 1px solid var(--border);
+  margin: 0 -2rem;
+  padding: 0 2rem;
+  row-gap: 0;
+}
+.cat-tab {
+  padding: .5rem .9rem;
+  border: none;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: .72rem;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: .03em;
+  border-bottom: 3px solid transparent;
+  transition: color .15s, border-color .15s;
+  white-space: nowrap;
+  line-height: 1.2;
+}
+.cat-tab:hover { color: var(--text); }
+.cat-tab.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  font-weight: 600;
+}
+
+/* ══════════════════════════════════
+   MAIN
+══════════════════════════════════ */
+main {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+  margin: 2rem 0 1.25rem;
+}
+.section-label span {
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+  background: var(--accent-lt);
+  padding: .24rem .7rem;
+  border-radius: 20px;
+  border: 1px solid #fde68a;
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.cat-section { margin-bottom: 2.5rem; }
+.cat-section.hidden { display: none; }
+
+.cat-head {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding-bottom: .75rem;
+  margin-bottom: 1.1rem;
+  border-bottom: 1.5px solid var(--border);
+}
+.cat-icon {
+  width: 30px; height: 30px;
+  border-radius: 7px;
+  background: var(--accent-lt);
+  border: 1px solid #fde68a;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .85rem; flex-shrink: 0;
+}
+.cat-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  color: var(--text);
+  font-weight: 600;
+}
+.cat-cnt {
+  margin-left: auto;
+  font-size: .67rem;
+  color: var(--muted);
+  background: var(--surface2);
+  padding: .16rem .55rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-weight: 500;
+}
+
+.qgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1rem;
+}
+
+/* Card */
+.qcard {
+  background: var(--surface);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  transition: transform .18s, box-shadow .18s;
+  position: relative;
+  box-shadow: var(--shadow);
+}
+.qcard::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0; width: 4px;
+}
+.qcard.easy::before   { background: var(--easy); }
+.qcard.medium::before { background: var(--medium); }
+.qcard.hard::before   { background: var(--hard); }
+.qcard.vhard::before  { background: var(--vhard); }
+.qcard:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.qcard.hidden { display: none; }
+
+.qbody { padding: 1.1rem 1.1rem 1.1rem 1.4rem; }
+
+.qmeta { display: flex; gap: .32rem; flex-wrap: wrap; margin-bottom: .72rem; align-items: center; }
+.badge {
+  padding: .17rem .52rem;
+  border-radius: 5px;
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: .03em;
+}
+.badge.src  { background: var(--surface2); color: var(--muted);  border: 1px solid var(--border); }
+.badge.pts  { background: var(--accent-lt); color: var(--accent); border: 1px solid #fde68a; }
+.badge.type { background: #ede9fe; color: #6d28d9; border: 1px solid #ddd6fe; }
+.badge.diff.easy   { background: var(--easy-bg);   color: var(--easy);   border: 1px solid #bbf7d0; }
+.badge.diff.medium { background: var(--medium-bg); color: var(--medium); border: 1px solid #bfdbfe; }
+.badge.diff.hard   { background: var(--hard-bg);   color: var(--hard);   border: 1px solid #fed7aa; }
+.badge.diff.vhard  { background: var(--vhard-bg);  color: var(--vhard);  border: 1px solid #fecaca; }
+
+.qtext {
+  font-size: .875rem;
+  line-height: 1.65;
+  color: var(--text);
+  margin-bottom: .82rem;
+}
+.qtags { display: flex; flex-wrap: wrap; gap: .28rem; margin-bottom: .82rem; }
+.qtag {
+  padding: .14rem .48rem;
+  border-radius: 4px;
+  font-size: .63rem;
+  background: var(--surface2);
+  color: var(--muted);
+  border: 1px solid var(--border);
+  font-weight: 500;
+}
+
+.hints-btn {
+  width: 100%;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: .46rem .72rem;
+  color: var(--muted);
+  font-size: .72rem;
+  cursor: pointer;
+  text-align: left;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background .15s, border-color .15s;
+  font-weight: 500;
+}
+.hints-btn:hover { background: #e9e4dc; border-color: #c9c4bb; color: var(--text); }
+.arrow { transition: transform .2s; font-size: .6rem; }
+.arrow.open { transform: rotate(180deg); }
+
+.hints-body { display: none; padding-top: .65rem; }
+.hints-body.open { display: block; }
+.hint {
+  display: flex; gap: .48rem;
+  padding: .3rem 0;
+  font-size: .785rem;
+  color: #57534e;
+  border-bottom: 1px solid #f0ece4;
+  line-height: 1.5;
+}
+.hint:last-child { border-bottom: none; }
+.hbullet { color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+
+.empty { text-align: center; padding: 5rem 2rem; color: var(--muted); }
+.empty h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: .5rem; color: var(--text); }
+.empty p { font-size: .85rem; }
+.hidden { display: none !important; }
+
+@media (max-width: 768px) {
+  .header-inner { padding: .85rem 1rem 0; }
+  .cat-nav { margin: 0 -1rem; padding: 0 1rem; }
+  main { padding: 1.25rem 1rem; }
+  .qgrid { grid-template-columns: 1fr; }
+  .stats-row { display: none; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-top">
+      <div class="branding">
+        <h1>IB Economics SL</h1>
+        <span class="branding-sep">/</span>
+        <p>Question Bank &mdash; Past Papers 2021–2022</p>
+      </div>
+      <div class="stats-row" id="statsRow"></div>
+    </div>
+
+    <div class="controls">
+      <input class="search" id="searchBox" type="text" placeholder="🔍  Search questions, topics, or concepts…">
+      <div class="diff-filters">
+        <button class="df all-d active" onclick="setDiff('all',this)">All</button>
+        <button class="df easy-d"       onclick="setDiff('easy',this)">Easy</button>
+        <button class="df med-d"        onclick="setDiff('medium',this)">Medium</button>
+        <button class="df hard-d"       onclick="setDiff('hard',this)">Hard</button>
+        <button class="df vh-d"         onclick="setDiff('vhard',this)">Very Hard</button>
+      </div>
+    </div>
+
+    <nav class="cat-nav" id="catNav"></nav>
+  </div>
+</header>
+
+<main id="mainContent"></main>
+
+<script>
+const categories = [
+  { id:'all',   label:'All Questions',     icon:'📚' },
+  { id:'sd',    label:'Supply & Demand',   icon:'🔄', section:'micro' },
+  { id:'ela',   label:'Elasticity',        icon:'📊', section:'micro' },
+  { id:'pf',    label:'Price Floors',      icon:'⬆️',  section:'micro' },
+  { id:'pc',    label:'Price Ceilings',    icon:'⬇️',  section:'micro' },
+  { id:'tax',   label:'Taxes & Subsidies', icon:'💰', section:'micro' },
+  { id:'ext',   label:'Externalities',     icon:'🌿', section:'micro' },
+  { id:'gov',   label:'Gov. Intervention', icon:'🏛️',  section:'micro' },
+  { id:'adas',  label:'AD/AS Model',       icon:'📈', section:'macro' },
+  { id:'une',   label:'Unemployment',      icon:'👔', section:'macro' },
+  { id:'mon',   label:'Monetary Policy',   icon:'🏦', section:'macro' },
+  { id:'fis',   label:'Fiscal Policy',     icon:'📋', section:'macro' },
+  { id:'ssp',   label:'Supply-Side Pol.',  icon:'⚙️',  section:'macro' },
+  { id:'exr',   label:'Exchange Rates',    icon:'💱', section:'macro' },
+  { id:'trade', label:'Intl. Trade',       icon:'🌍', section:'macro' },
+  { id:'dev',   label:'Growth & Dev.',     icon:'🌱', section:'macro' },
+  { id:'pov',   label:'Poverty & Equity',  icon:'⚖️',  section:'macro' },
+];
+
+const questions = [
+/* ── SUPPLY & DEMAND ── */
+{cat:'sd',diff:'easy',marks:4,type:'Explain (Diagram)',src:'N21 · P2 Q3b',
+ q:'Using a demand and supply diagram, explain why the global price of coffee beans dropped when countries such as Vietnam, Indonesia and Ethiopia increased their exports.',
+ tags:['supply shift','price equilibrium','commodity markets'],
+ hints:['Draw D&S diagram for coffee','Show rightward shift of supply curve','Identify new lower equilibrium price','Explain: higher supply → excess supply at old price → price falls']},
+
+{cat:'sd',diff:'easy',marks:4,type:'Explain (Diagram)',src:'N22 · P2 Q1c',
+ q:'Using a demand and supply diagram, explain why falling overseas demand will reduce Bangladeshi garment firms\' revenue.',
+ tags:['demand shift','revenue','garment industry'],
+ hints:['Draw D&S with demand shifting left','Show lower price AND lower quantity','Link both effects to reduced total revenue (P×Q)','Note: TR = P × Q — both fall']},
+
+{cat:'sd',diff:'easy',marks:4,type:'Explain (Diagram)',src:'M22 · P2 Q2f',
+ q:'Using a demand and supply diagram, explain how modern farming practices (machinery and fertilizers) could affect the market for rice in Sierra Leone.',
+ tags:['supply shift','technology','agriculture'],
+ hints:['Improved farming = lower costs / higher yields → supply shifts right','Show new lower equilibrium price and higher quantity','Benefit to consumers: lower price','Producers: depends on PED for revenue effect']},
+
+{cat:'sd',diff:'medium',marks:10,type:'Explain',src:'M21 TZ1 · P1 Q1a',
+ q:'Explain how the price mechanism reallocates resources when there is a decrease in the supply of a good.',
+ tags:['price mechanism','signals & incentives','market equilibrium','resource allocation'],
+ hints:['Define price mechanism, supply, and resource reallocation','Draw diagram: supply shifts left, price rises, quantity falls','Explain: higher price → signal for producers to expand supply, incentive for consumers to switch','Consumers reallocate spending to substitutes','Producers reallocate resources to now more profitable good']},
+
+/* ── ELASTICITY ── */
+{cat:'ela',diff:'medium',marks:10,type:'Explain',src:'M21 TZ2 · P1 Q1a',
+ q:'Explain why the price elasticity of demand for primary commodities is often relatively low while the price elasticity of demand for manufactured goods is often relatively high.',
+ tags:['PED','primary commodities','manufactured goods','substitutes','necessity'],
+ hints:['Define price elasticity of demand (PED)','Draw inelastic D curve for commodities; elastic D curve for manufactures','Commodities: few substitutes, often necessities, small share of income → inelastic','Manufactured goods: many substitutes, often luxuries, wider product variety → elastic','Give examples: oil/wheat (inelastic) vs. branded electronics (elastic)']},
+
+{cat:'ela',diff:'medium',marks:10,type:'Explain',src:'N21 · P1 Q1a',
+ q:'Explain how a decrease in income might affect the demand for normal goods and the demand for inferior goods.',
+ tags:['YED','income elasticity','normal goods','inferior goods','demand shift'],
+ hints:['Define normal good (YED > 0) and inferior good (YED < 0)','Show demand shifting LEFT for normal goods when income falls','Show demand shifting RIGHT for inferior goods when income falls','Examples: luxury cars (normal); instant noodles, bus rides (inferior)','Maximum [6] if only one type addressed']},
+
+{cat:'ela',diff:'hard',marks:15,type:'Discuss',src:'M21 TZ2 · P1 Q1b',
+ q:'Discuss the importance of price elasticity of demand (PED) and cross price elasticity of demand (XED) for a firm\'s decision making.',
+ tags:['PED','XED','total revenue','substitutes','complements','pricing strategy'],
+ hints:['Define PED and XED clearly','PED: elastic demand → price cut raises TR; inelastic → price rise raises TR','XED: positive = substitutes (rival pricing matters); negative = complements (bundle pricing)','Real-world: airline pricing, app ecosystems, petrol and cars','Limitations: difficulty estimating PED/XED in practice; ceteris paribus assumption','Consider XED is most useful in oligopolistic markets']},
+
+{cat:'ela',diff:'hard',marks:15,type:'Discuss',src:'N21 · P1 Q1b',
+ q:'Discuss the significance of income elasticity of demand (YED) for producers of primary products and producers of manufactured goods when incomes are rising.',
+ tags:['YED','primary products','manufactured goods','rising incomes','commodity trap'],
+ hints:['Define YED; primary products tend to have low YED (necessities)','Manufactured goods (especially luxuries) have high positive YED','Rising incomes benefit manufacturers disproportionately','Primary producers face slower revenue growth even as economies expand','Discuss: commodities with high YED exist (e.g., organic food); luxury vs. basic manufactures differ','Award max [9] if only one producer type addressed']},
+
+/* ── PRICE FLOORS ── */
+{cat:'pf',diff:'medium',marks:10,type:'Explain',src:'N21 · P1 Q2a',
+ q:'Explain the impact on consumers, producers and the government of a price floor being introduced in an agricultural market.',
+ tags:['price floor','minimum price','surplus','agricultural markets','stakeholders'],
+ hints:['Define price floor (must be set above equilibrium)','Draw diagram: price floor above equilibrium, showing surplus (Qs > Qd)','Consumers: pay higher price, buy less → welfare loss','Producers: receive higher price, want to supply more, revenue may rise','Government: must purchase surplus at set price → costly','Award max [6] for one stakeholder; max [8] for two; all three needed for full marks']},
+
+{cat:'pf',diff:'hard',marks:15,type:'Discuss',src:'M21 TZ1 · P1 Q2b',
+ q:'Discuss the view that price floors are more effective than subsidies in providing assistance to producers in the agricultural sector.',
+ tags:['price floor','subsidies','agricultural support','producer income','policy comparison'],
+ hints:['Define price floors and subsidies; draw both diagrams','Price floor: guaranteed higher price, but creates surplus; government must buy surplus','Subsidy: shifts supply right, lowers consumer price too, boosts producer income; no surplus','Price floors may distort market more; subsidies preserve market equilibrium','Consider WTO rules on agricultural subsidies as a real-world constraint','Award max [12] if no explicit comparison of "more effective"']},
+
+/* ── PRICE CEILINGS ── */
+{cat:'pc',diff:'hard',marks:15,type:'Evaluate',src:'N21 · P1 Q2b',
+ q:'Evaluate the view that a price ceiling is an ineffective policy to protect low-income consumers.',
+ tags:['price ceiling','maximum price','shortage','black market','low-income consumers'],
+ hints:['Define price ceiling (must be set below equilibrium)','Draw diagram: ceiling below equilibrium → excess demand (shortage)','Negatives: shortage, queuing, black markets, corruption, quality decline','But: some lucky consumers DO get the good at a lower price — clear benefit','Effective IF: government has alternative rationing system (e.g., coupons)','Real-world: rent controls, fuel price caps. Evaluate: who actually benefits?']},
+
+/* ── TAXES & SUBSIDIES ── */
+{cat:'tax',diff:'medium',marks:10,type:'Explain',src:'M21 TZ1 · P1 Q2a',
+ q:'Explain two reasons why a government might impose indirect taxes.',
+ tags:['indirect tax','excise duty','demerit goods','negative externalities','government revenue','VAT'],
+ hints:['Define indirect taxes (levied on expenditure, e.g., VAT, excise duty)','Draw diagram: supply shifts left/up, price rises, quantity falls','Reason 1: raise government revenue (e.g., VAT on all goods)','Reason 2: correct negative externalities / discourage demerit goods (e.g., tobacco tax)','Could also mention: trade protection, income redistribution','Award max [6] if only one reason explained']},
+
+{cat:'tax',diff:'hard',marks:15,type:'Evaluate',src:'M22 · P1 Q1b',
+ q:'Using real-world examples, evaluate the effects for stakeholders of a government imposing an indirect tax on a particular good.',
+ tags:['indirect tax','consumer surplus','producer surplus','tax incidence','PED','PES','deadweight loss'],
+ hints:['Draw D&S diagram with supply shifting left; identify new price & quantity','Consumers: pay higher price, buy less, lose consumer surplus','Producers: receive lower price net of tax, sell less, lose revenue','Workers: possible job losses in the taxed industry','Government: gains tax revenue for public spending','Evaluation: tax incidence depends on PED/PES; specific vs. ad valorem; regressive nature if on necessities','Award max [9] if only one stakeholder mentioned']},
+
+/* ── EXTERNALITIES ── */
+{cat:'ext',diff:'easy',marks:4,type:'Explain (Diagram)',src:'M22 · P2 Q1d',
+ q:'Using an externalities diagram, explain how North Macedonia\'s dependence on coal could be a source of market failure.',
+ tags:['negative externality','market failure','MSC','MPC','coal','pollution'],
+ hints:['Draw negative externality of production diagram','MPC < MSC (external costs of pollution not borne by producer)','Market produces at Qm (too much) vs. socially optimal Qs (less)','Welfare loss (deadweight loss) triangle shown','Coal burning → air pollution externality → MSC > MPC']},
+
+{cat:'ext',diff:'easy',marks:4,type:'Explain (Diagram)',src:'N21 · P2 Q3c',
+ q:'Using an externalities diagram, explain how coal-fired power plants in the US might be causing market failure.',
+ tags:['negative externality','coal','pollution','MSC','deadweight loss'],
+ hints:['Negative production externality diagram','MSC curve above MPC curve (external cost = pollution/global warming)','Competitive market produces Qm > socially optimal Qs','Deadweight welfare loss triangle','Link: coal plant carbon emissions → global warming → negative third-party effects']},
+
+{cat:'ext',diff:'easy',marks:4,type:'Explain (Diagram)',src:'N22 · P2 Q2c',
+ q:'Using an externalities diagram, explain why the government of Uruguay should subsidize health care.',
+ tags:['positive externality','MSB','MPB','health care','market failure','subsidy'],
+ hints:['Positive consumption externality diagram','MPB < MSB (society gains more than the individual: herd immunity, productivity)','Market under-provides health care at Qm < Qs','Subsidy shifts supply right → reduces price → increases consumption toward Qs','Welfare gain = area of deadweight loss recovered']},
+
+{cat:'ext',diff:'medium',marks:10,type:'Explain',src:'M21 TZ2 · P1 Q2a',
+ q:'Explain the concept of positive externalities of consumption.',
+ tags:['positive externality','MSB','MPB','market failure','vaccination','education'],
+ hints:['Define externalities and positive externalities of consumption','Draw diagram: MPB curve, MSB curve (above MPB), supply = MPC = MSC','Market equilibrium at Qm (too little), socially optimal at Qs','Explain: third-party benefits not reflected in market price','Examples: vaccination (herd immunity), education (skilled workforce externality)','Deadweight welfare loss shown between Qm and Qs']},
+
+{cat:'ext',diff:'hard',marks:15,type:'Evaluate',src:'M21 TZ1 · P1 Q1b',
+ q:'Evaluate the view that the threat to sustainability caused by economic activity requiring the use of fossil fuels is best addressed through the use of carbon taxes.',
+ tags:['carbon tax','negative externality','sustainability','fossil fuels','cap and trade','Pigouvian tax'],
+ hints:['Carbon taxes = Pigouvian tax to internalise external costs; diagram: supply shifts left','Advantages: market-based, raises revenue, efficient, firms choose least-cost abatement','Disadvantages: hard to set the correct tax; regressive; may relocate production (carbon leakage)','Alternative 1: Tradable permits (cap and trade) — guaranteed pollution level, market-determined price','Alternative 2: Regulations & technology subsidies for clean energy','Evaluate "best" — depends on measurability of externality, political will, regressive effects','Award max [12] if no alternative policy mentioned']},
+
+{cat:'ext',diff:'hard',marks:15,type:'Discuss',src:'M21 TZ2 · P1 Q2b',
+ q:'Discuss the view that tradable permits are more effective than taxes in reducing pollution.',
+ tags:['tradable permits','cap and trade','carbon tax','pollution','market failure'],
+ hints:['Define tradable permits and how they work (cap set, firms trade)','Advantage of permits: guaranteed reduction in total pollution quantity; incentivises innovation','Tax: easier to implement; revenue collected; but uncertain quantity reduction','Permits may be expensive to administer; initial allocation matters','Tax: may be regressive; politically difficult; set too low if lobbied','Award max [9] if only permits OR only tax discussed']},
+
+/* ── GOVERNMENT INTERVENTION ── */
+{cat:'gov',diff:'easy',marks:10,type:'Explain',src:'N22 · P1 Q1a',
+ q:'Explain two forms of government intervention in markets.',
+ tags:['price ceiling','price floor','indirect tax','subsidy','government intervention','regulation'],
+ hints:['Define government intervention in markets','Form 1: e.g., price ceiling (maximum price) — draw diagram, explain shortage','Form 2: e.g., indirect tax or subsidy — draw relevant diagram','Other valid answers: regulation, direct provision, tariff','Award max [6] for only one form']},
+
+{cat:'gov',diff:'medium',marks:10,type:'Explain',src:'M22 · P1 Q1a',
+ q:'Explain one policy that could be used to support firms and one policy that could be used to promote equity.',
+ tags:['subsidy','price floor','progressive taxation','price ceiling','equity','market support'],
+ hints:['Policy to support firms: subsidy (supply shifts right) OR price floor (minimum price) OR trade protection','Draw relevant diagram for firm support policy','Policy for equity: progressive taxation OR price ceiling on necessity OR direct provision of services','Draw relevant diagram for equity policy','Award max [6] if only one policy/objective addressed']},
+
+{cat:'gov',diff:'hard',marks:15,type:'Discuss',src:'N22 · P1 Q1b',
+ q:'Using real-world examples, discuss the view that governments should intervene if markets fail to provide public goods.',
+ tags:['public goods','market failure','free rider','non-excludable','non-rival','direct provision'],
+ hints:['Define public goods: non-excludable + non-rival (e.g., national defence, street lighting)','Free-rider problem → zero/insufficient market supply → market failure','Government provision: direct provision or subsidised private provision','Discussion: which goods qualify? how much? government failure risk','Private provision can work (roads with tolls become excludable)','Real examples: national defence, public parks, lighthouses','Evaluate: government can also fail in provision (inefficiency, public choice issues)']},
+
+/* ── AD/AS MODEL ── */
+{cat:'adas',diff:'easy',marks:4,type:'Explain (Diagram)',src:'M22 · P2 Q1c',
+ q:'Using an AD/AS diagram, explain the likely impact of North Macedonia\'s supply-side policies on its full employment level of output.',
+ tags:['LRAS','supply-side policy','full employment','AD/AS'],
+ hints:['Draw AD/AS with LRAS shifting right (supply-side policies expand productive capacity)','Label Yfe (initial) → Yfe₂ (new, higher)','Link to specific policies: education, infrastructure, training','Result: higher potential output and lower price level']},
+
+{cat:'adas',diff:'easy',marks:4,type:'Explain (Diagram)',src:'N21 · P2 Q4b',
+ q:'Using an AD/AS diagram, explain how "lower prices for food and raw materials" might put downward pressure on inflation in Tanzania.',
+ tags:['SRAS','cost-push','AD/AS','supply shock','inflation'],
+ hints:['Lower input costs → SRAS shifts right (cost-push relief)','Show AD constant, SRAS shifts right → lower price level (↓ inflation)','Real GDP increases as a bonus','Link specifically to food/commodity prices as production inputs']},
+
+{cat:'adas',diff:'easy',marks:4,type:'Explain (Diagram)',src:'N21 · P2 Q2b',
+ q:'Using an AD/AS diagram, explain how the change in South Korea\'s balance of trade from 2018 to 2019 could have affected its economy.',
+ tags:['AD','net exports','balance of trade','AD/AS','economic slowdown'],
+ hints:['Balance of trade fell (surplus shrank: $79.15bn → $55.84bn)','Net exports component of AD fell → AD shifts left','Show: lower real GDP and lower price level','Link to weakness in semiconductor exports (falling prices)']},
+
+{cat:'adas',diff:'medium',marks:4,type:'Explain (Diagram)',src:'N22 · P2 Q2d',
+ q:'Using an AD/AS diagram, explain how climate-related shocks, such as droughts, could affect Uruguay\'s real GDP growth.',
+ tags:['supply shock','SRAS','AD/AS','agriculture','drought'],
+ hints:['Drought reduces agricultural output → negative supply shock','SRAS shifts left (cost-push/supply disruption)','Result: lower real GDP, higher price level (stagflation)','Also possible: AD shifts left if income and exports fall (demand-side)']},
+
+{cat:'adas',diff:'medium',marks:10,type:'Explain',src:'M21 TZ1 · P1 Q4a',
+ q:'Explain how aggregate demand is likely to be affected by an increase in the wealth of consumers and an increase in business confidence.',
+ tags:['aggregate demand','wealth effect','consumer confidence','business investment','AD shift'],
+ hints:['Define aggregate demand (AD = C + I + G + (X−M))','Draw AD curve shifting right','Wealth effect: higher wealth → consumers feel richer → increase consumption (C)','Can borrow more against assets; wealthier households more willing to spend','Business confidence: optimism about future sales/profits → higher investment (I)','Both C and I increase → AD shifts right','Award max [6] if only wealth OR only business confidence addressed']},
+
+{cat:'adas',diff:'medium',marks:10,type:'Explain',src:'N21 · P1 Q3a',
+ q:'Explain how in the Keynesian AD/AS model an economy can be in equilibrium while producing below the full employment level of output.',
+ tags:['Keynesian LRAS','deflationary gap','equilibrium below full employment','wage rigidity','AD'],
+ hints:['Draw Keynesian AD/AS model (horizontal SRAS up to Yfe then vertical)','Show AD intersecting SRAS below Yfe → deflationary gap','Wages and prices are sticky downward in Keynesian model','AD falls → excess supply of labour → wages do not fall enough to clear market','Economy stays at low output equilibrium without government intervention','Contrast with Classical model where wages fully flexible']},
+
+/* ── UNEMPLOYMENT ── */
+{cat:'une',diff:'medium',marks:10,type:'Explain',src:'M21 TZ2 · P1 Q3a',
+ q:'Explain why cyclical (demand-deficient) unemployment may occur in an economy.',
+ tags:['cyclical unemployment','demand-deficient','AD fall','recession','business cycle'],
+ hints:['Define cyclical unemployment (demand-deficient, occurs during recession)','Draw AD/AS: AD shifts left → output falls → firms need fewer workers','Link to components of AD: fall in C, I, G, or net exports causes AD to fall','Wages may be sticky downward → labour market does not clear quickly','Real-world: 2008 financial crisis → falling AD → mass unemployment']},
+
+{cat:'une',diff:'hard',marks:15,type:'Evaluate',src:'M21 TZ2 · P1 Q3b',
+ q:'Evaluate the effectiveness of interventionist supply-side policies in reducing the level of unemployment in an economy.',
+ tags:['supply-side policy','structural unemployment','education','training','LRAS','unemployment'],
+ hints:['Define interventionist supply-side policies: gov spending on education, training, R&D, infrastructure','Draw LRAS shifting right and/or labour supply increasing','Effective for structural unemployment: improves skills matching','Also boosts AD in short run (gov spending) → reduces cyclical unemployment','Limitations: long time lags (years before workforce skills improve)','Less effective for demand-deficient unemployment (need fiscal/monetary policy)','Investment in automation (AI/robotics) may paradoxically reduce jobs']},
+
+{cat:'une',diff:'hard',marks:15,type:'Evaluate',src:'M22 · P1 Q2b',
+ q:'Evaluate the view that the use of interventionist supply-side policies is the most effective way of reducing a country\'s rate of unemployment.',
+ tags:['interventionist supply-side','education','training','unemployment','policy comparison'],
+ hints:['Interventionist supply-side: government spending on education, training, infrastructure, healthcare','Increases LRAS and human capital → reduces structural unemployment long-term','Increases AD via government spending in short run → reduces cyclical unemployment','BUT: long time lags (years before skilled workers emerge)','Compare: expansionary fiscal policy (faster but deficit risk); monetary policy (lower rates boost investment)','Market-based supply-side: deregulation, privatisation — may help but slower','Conclusion: effectiveness depends on type of unemployment; no single best policy','Award max [12] if no alternatives mentioned']},
+
+{cat:'une',diff:'hard',marks:15,type:'Evaluate',src:'M21 TZ1 · P1 Q4b',
+ q:'Evaluate the effectiveness of monetary policy in reducing an economy\'s rate of unemployment.',
+ tags:['monetary policy','interest rates','AD','cyclical unemployment','structural unemployment'],
+ hints:['Define monetary policy; expansionary = lower interest rates / quantitative easing','Draw AD shifting right → higher output, employment rises','Lower interest rates: stimulate consumer borrowing (C) and business investment (I)','Lower rates depreciate currency → boost exports → more jobs','Effective for cyclical unemployment but NOT structural (skills mismatch)','Limitations: liquidity trap in deep recession; time lags; credit availability','Independence of central bank; possible conflict with inflation target','Alternative: fiscal or supply-side policies may complement monetary policy']},
+
+{cat:'une',diff:'hard',marks:15,type:'Evaluate',src:'N21 · P1 Q3b',
+ q:'Evaluate the view that fiscal policy is the best way to reduce unemployment.',
+ tags:['fiscal policy','expansionary','AD','multiplier','cyclical unemployment','budget deficit'],
+ hints:['Expansionary fiscal policy: increase G, cut taxes → AD shifts right → output/employment rises','Multiplier effect: initial spending leads to further rounds of spending','Particularly effective in recessions when monetary policy may be ineffective','Limitations: time lags (budget process); budget deficit risks; crowding out private investment','Only targets demand-deficient unemployment; ineffective for structural unemployment','Alternative policies: supply-side (structural), monetary (cyclical), active labour market policies','Award max [12] if no alternative policy considered']},
+
+/* ── MONETARY POLICY ── */
+{cat:'mon',diff:'medium',marks:10,type:'Explain',src:'M21 TZ2 · P1 Q4a',
+ q:'Explain how expansionary monetary policy could be used to close a deflationary (recessionary) gap.',
+ tags:['expansionary monetary policy','deflationary gap','interest rates','AD','recessionary gap'],
+ hints:['Define monetary policy and deflationary gap (output below potential)','Central bank: reduce interest rates / increase money supply (quantitative easing)','Draw: lower rates → AD shifts right → closes gap between actual and potential output','Mechanism: lower rates → cheaper borrowing → C and I rise; currency depreciates → X rises','GDP returns to potential output (Yfe)','Real-world: post-2008 near-zero rates in US, UK, EU']},
+
+{cat:'mon',diff:'hard',marks:15,type:'Evaluate',src:'M21 TZ2 · P1 Q4b',
+ q:'Evaluate the effectiveness of monetary policy in reducing an economy\'s rate of inflation.',
+ tags:['contractionary monetary policy','inflation','interest rates','demand-pull','cost-push','central bank'],
+ hints:['Contractionary monetary policy: raise interest rates → AD shifts left → reduces demand-pull inflation','Draw AD/AS: AD left → lower price level','Advantages: central bank independent → credible; quick to implement; incremental changes','Limitations: time lags (12–18 months); ineffective against cost-push inflation; can deepen recession','Risk: higher rates slow growth, raise unemployment (trade-off)','May need to combine with supply-side (for cost-push inflation)','Real-world: Bank of England raising rates 2022–2023 to fight post-COVID inflation']},
+
+/* ── FISCAL POLICY ── */
+{cat:'fis',diff:'easy',marks:10,type:'Explain',src:'N22 · P1 Q2a',
+ q:'Explain two goals of fiscal policy.',
+ tags:['fiscal policy','goals','inflation','unemployment','economic growth','equity'],
+ hints:['Define fiscal policy (government spending and taxation)','Goal 1 example: reduce cyclical unemployment via expansionary fiscal policy (draw AD shifting right)','Goal 2 example: close inflationary gap via contractionary policy; OR promote long-term growth','Other valid goals: income redistribution, stable inflation, external balance','Supply-side effects of fiscal policy also rewarded','Award max [6] for only one goal']},
+
+{cat:'fis',diff:'medium',marks:10,type:'Explain',src:'M21 TZ1 · P1 Q3a',
+ q:'Explain how the size of the circular flow of income in an economy is likely to be affected by a decrease in the rate of interest.',
+ tags:['circular flow','interest rate','injections','leakages','saving','investment'],
+ hints:['Draw circular flow of income diagram with injections (I, G, X) and leakages (S, T, M)','Lower interest rates → saving less attractive (leakage decreases)','Lower rates → cheaper borrowing → investment increases (injection increases)','Net effect: leakage ↓ and injection ↑ → circular flow EXPANDS','Multiplier effect amplifies the initial change in income','Real-world: near-zero rates post-2008 → increased borrowing and spending']},
+
+{cat:'fis',diff:'hard',marks:15,type:'Evaluate',src:'M21 TZ1 · P1 Q3b',
+ q:'Evaluate the effectiveness of fiscal policy as a means of achieving long-term economic growth.',
+ tags:['fiscal policy','long-term growth','LRAS','infrastructure','human capital','budget deficit'],
+ hints:['Fiscal policy for long-term growth: government spending on infrastructure, education, R&D, healthcare','Show LRAS shifting right (PPC shifting out) in AD/AS diagram','Tax incentives for investment also grow productive capacity','Advantages: targeted at specific sectors; addresses market failures in public goods provision','Limitations: time lags; opportunity cost; higher taxes may crowd out private investment','Budget deficit sustainability; inflation risk from expansionary policy','Compare: monetary policy (adjusts rates quickly); market-based supply-side (privatisation)']},
+
+{cat:'fis',diff:'hard',marks:15,type:'Evaluate',src:'N22 · P1 Q2b',
+ q:'Using real-world examples, evaluate the use of fiscal policy to close a deflationary/recessionary gap.',
+ tags:['fiscal policy','deflationary gap','expansionary','multiplier','time lags','crowding out'],
+ hints:['Define deflationary/recessionary gap; draw AD/AS showing output below potential','Expansionary fiscal policy: ↑ G or ↓ T → AD shifts right → real GDP rises','Multiplier amplifies initial spending; effective in deep recession when monetary is limited','Targeted spending (e.g., infrastructure) has both demand- and supply-side effects','Limitations: political pressures delay implementation; time lags; government borrowing → debt','Crowding out: higher borrowing may raise interest rates → lower private investment','Shape of AS matters: Keynesian flat AS → more effective; near-vertical → mainly inflationary','Real-world: US CARES Act 2020; EU recovery funds post-COVID']},
+
+/* ── SUPPLY-SIDE POLICIES ── */
+{cat:'ssp',diff:'medium',marks:10,type:'Explain',src:'M22 · P1 Q2a',
+ q:'Explain how the use of supply-side policies might encourage greater domestic competition and improve the international competitiveness of a country.',
+ tags:['supply-side policy','privatisation','deregulation','LRAS','international competitiveness'],
+ hints:['Define supply-side policies (market-based and interventionist)','Market-based: privatisation, deregulation, anti-monopoly legislation → greater domestic competition','Interventionist: education/training, R&D subsidies, infrastructure → lower costs, higher productivity','Both types → LRAS shifts right → lower price level → exports cheaper (more internationally competitive)','Draw AD/AS with LRAS shifting right; label: lower prices, higher output','Award max [6] if only one of the two goals addressed']},
+
+{cat:'ssp',diff:'medium',marks:4,type:'Explain (Diagram)',src:'M22 · P2 Q1c',
+ q:'Using an AD/AS diagram, explain the likely impact of North Macedonia\'s supply-side policies on its full employment level of output.',
+ tags:['LRAS','supply-side policy','productive capacity','AD/AS'],
+ hints:['Interventionist supply-side: education, training, infrastructure → LRAS shifts right','Draw LRAS right shift; new higher Yfe','Lower long-run price level benefits international competitiveness','Short-run: government spending on these policies also boosts AD']},
+
+/* ── EXCHANGE RATES ── */
+{cat:'exr',diff:'easy',marks:4,type:'Explain (Diagram)',src:'N21 · P2 Q2c',
+ q:'Using an exchange rate diagram, explain the effect on the South Korean won\'s exchange rate when the Bank of Korea sold US dollars.',
+ tags:['exchange rate','central bank intervention','appreciation','foreign reserves','won'],
+ hints:['Draw exchange rate diagram: S and D for won (or USD)','BoK sells USD → buys won → demand for won increases','Won appreciates (exchange rate rises) against USD','Diagram: D curve for won shifts right → higher exchange rate']},
+
+{cat:'exr',diff:'medium',marks:10,type:'Explain',src:'N22 · P1 Q3a',
+ q:'Explain two factors that might cause an appreciation of a currency.',
+ tags:['currency appreciation','exchange rate','exports','interest rates','speculation','capital flows'],
+ hints:['Define appreciation: currency rises in value against others','Factor 1: Increase in export demand → foreigners need more of currency → demand rises → appreciates','Factor 2: Higher relative interest rates → capital inflows (portfolio investment) → demand for currency rises','Other valid factors: lower inflation rate, speculation, central bank buying own currency','Draw exchange rate diagram: D for currency shifts right → appreciation','Award max [6] if only one cause explained']},
+
+{cat:'exr',diff:'medium',marks:4,type:'Explain (Diagram)',src:'M22 · P2 Q1e',
+ q:'Using an exchange rate diagram, explain how the central bank of North Macedonia is preventing an appreciation of the denar against the euro.',
+ tags:['exchange rate','central bank','foreign reserves','denar','appreciation prevention'],
+ hints:['Central bank sells denar / buys euros → increases supply of denar','Draw forex diagram: S of denar shifts right → prevents price (exchange rate) from rising','Accumulates foreign (euro) reserves as a result','Keeps denar undervalued → competitive exports for EU membership goal']},
+
+{cat:'exr',diff:'medium',marks:4,type:'Explain (Diagram)',src:'M22 · P2 Q2c',
+ q:'Using an exchange rate diagram, explain how the fall in export revenue contributed to the depreciation of the leone (Sierra Leone).',
+ tags:['exchange rate','depreciation','export revenue','current account','leone'],
+ hints:['Lower export revenue → less foreign demand for leone','Draw forex diagram: D for leone shifts left','Lower demand for leone at each price → leone depreciates','Lower exchange rate is the result']},
+
+{cat:'exr',diff:'medium',marks:4,type:'Explain (Diagram)',src:'N22 · P2 Q1e',
+ q:'Using an exchange rate diagram, explain how the large increase in Bangladesh\'s imports is likely to have affected the exchange rate of the taka.',
+ tags:['exchange rate','imports','depreciation','taka','current account'],
+ hints:['Higher imports → more BDT sold to buy foreign currency','Draw forex diagram: S of taka increases (shifts right)','Taka depreciates (exchange rate falls)','Consistent with data: BDT/USD rose from 69.6 to 84.5 (depreciation)']},
+
+{cat:'exr',diff:'medium',marks:4,type:'Explain (Diagram)',src:'N22 · P2 Q2f',
+ q:'Using an exchange rate diagram, explain how Uruguay\'s central bank can use its reserve assets to prevent the depreciation of the peso.',
+ tags:['exchange rate','central bank','foreign reserves','managed float','peso'],
+ hints:['Peso under depreciation pressure → central bank sells USD reserves, buys pesos','Draw forex diagram: D for peso increases (shifts right)','Prevents peso from falling further','Requires sufficient foreign reserves to sustain intervention']},
+
+{cat:'exr',diff:'medium',marks:4,type:'Explain (Diagram)',src:'N21 · P2 Q1c',
+ q:'Using a foreign exchange diagram, explain the possible effect of China\'s large current account surplus in 2007 on the exchange rate of the renminbi.',
+ tags:['exchange rate','current account surplus','renminbi','appreciation pressure','China'],
+ hints:['Large current account surplus → high export revenues → high demand for renminbi','Draw forex diagram: D for renminbi shifts right','Upward pressure on renminbi exchange rate → appreciation','China\'s actual response: central bank intervention to prevent appreciation']},
+
+{cat:'exr',diff:'hard',marks:15,type:'Discuss',src:'N22 · P1 Q3b',
+ q:'Using real-world examples, discuss the consequences for an economy of an appreciation of its currency.',
+ tags:['currency appreciation','exports','imports','inflation','current account','Marshall-Lerner'],
+ hints:['Appreciation → exports more expensive abroad → export volume falls','Appreciation → imports cheaper → import volume rises','Current account deteriorates (depends on Marshall-Lerner condition)','Imported inflation falls → lower domestic price level (helpful for inflation)','May cause unemployment in export-oriented sectors','Standard of living could rise if imports are cheaper consumer goods','Real-world: Swiss franc appreciation 2015 → Swiss exports hurt; UK pound depreciation post-Brexit','Discuss: magnitude of appreciation, elasticities, time horizon (J-curve)']},
+
+{cat:'exr',diff:'hard',marks:8,type:'Evaluate',src:'N21 · P2 Q2d',
+ q:'Evaluate the South Korean central bank\'s decision to intervene in the forex market to prevent the won from depreciating again.',
+ tags:['exchange rate intervention','managed exchange rate','South Korea','central bank','exports'],
+ hints:['Intervention: BoK sold USD → bought won → prevented won from falling','Arguments FOR: prevents excessive volatility; protects import purchasing power; controls inflation','Arguments AGAINST: costly in reserves; accused of currency manipulation by US; exports lose competitiveness','South Korea\'s exports are high-tech (luxury goods), less price-sensitive → competitive position less critical','Floating rates allow natural adjustment; intervention distorts market signals','Evaluate: was the depreciation speculative or fundamental? Temporary vs. structural intervention']},
+
+/* ── INTERNATIONAL TRADE ── */
+{cat:'trade',diff:'easy',marks:4,type:'Explain (Diagram)',src:'N21 · P2 Q1b',
+ q:'Using a tariff diagram, explain the likely effect on consumer surplus of a 25% tariff on all wooden furniture imported into the US.',
+ tags:['tariff','consumer surplus','trade protection','wooden furniture','US'],
+ hints:['Draw tariff diagram: world price + tariff = domestic price','Higher domestic price → consumers pay more, buy less','Consumer surplus area shrinks (from under D above Pw to above Pw+tariff)','Revenue goes to government; domestic producers gain','Net welfare loss (deadweight loss triangles)']},
+
+{cat:'trade',diff:'medium',marks:4,type:'Explain (Diagram)',src:'N22 · P2 Q1d',
+ q:'Using an international trade diagram, explain how the imposition of a 15% tariff on imported garments from Bangladesh would affect the revenue earned by Bangladeshi producers.',
+ tags:['tariff','trade protection','revenue','Bangladeshi producers','US market'],
+ hints:['Draw international trade diagram for garment market in US','15% tariff raises price in US market → US demand for Bangladeshi garments falls','Bangladeshi export volume falls → their revenue falls','Domestic US producers gain at expense of Bangladeshi exporters','Note: net effect on Bangladeshi revenue depends on elasticity']},
+
+{cat:'trade',diff:'medium',marks:4,type:'Explain (Diagram)',src:'M22 · P2 Q1f',
+ q:'Using an international trade diagram, explain the likely impact of the removal of import quotas on North Macedonia\'s production of wine.',
+ tags:['import quota','free trade','wine','domestic producers','competition'],
+ hints:['Draw international trade diagram: domestic supply, world supply + quota','Removal of quota → supply increases at world price (no longer restricted)','Price falls toward world price','Domestic wine production in North Macedonia falls (squeezed out by lower-cost EU wine)','Consumers benefit from lower price; domestic producers lose']},
+
+{cat:'trade',diff:'medium',marks:4,type:'Explain (Diagram)',src:'N22 · P2 Q2e',
+ q:'Using an international trade diagram, explain the effect on consumers in Uruguay if a quota is imposed on cheese imports from the EU.',
+ tags:['import quota','consumers','price','cheese','trade restriction'],
+ hints:['Draw international trade diagram: quota restricts supply below free trade level','Higher domestic price for cheese (above world price)','Consumer surplus falls (pay more, buy less)','Domestic producers benefit; government may earn quota rent','Trade-off: protect domestic producers vs. harm consumers']},
+
+{cat:'trade',diff:'hard',marks:8,type:'Evaluate',src:'N21 · P2 Q1d',
+ q:'Using information from the text and your knowledge of economics, evaluate China\'s use of subsidies as a form of trade protection.',
+ tags:['subsidies','trade protection','WTO','dumping','competitive advantage','trade war'],
+ hints:['China subsidised steel, solar panels → lower cost for domestic firms → undercuts foreign rivals','Advantage: supports Chinese industries, jobs, strategic sectors','Disadvantage: unfair competitive advantage → distorts global trade','Risk: WTO rules prohibit certain subsidies; US/EU retaliation (tariffs)','Deadweight loss in foreign countries where domestic industries damaged','Evaluate: infant industry argument (acceptable) vs. strategic dumping (harmful)?','Consider: China\'s goal = industrialisation; global concern = race-to-the-bottom subsidisation']},
+
+/* ── GROWTH & DEVELOPMENT ── */
+{cat:'dev',diff:'medium',marks:10,type:'Explain',src:'M22 · P1 Q3a',
+ q:'Explain how political and social factors can act as barriers to economic growth and economic development.',
+ tags:['barriers to development','corruption','governance','gender inequality','institutions','political barriers'],
+ hints:['Define economic growth and economic development','Political barriers: corruption → resources diverted; weak rule of law → poor property rights; conflict disrupts production','Ineffective taxation → insufficient public revenue for investment','Social barriers: gender inequality → women excluded from workforce; low female education = wasted human capital','Poor institutional frameworks → lack of investor confidence; difficult business environment','Draw PPC or AD/AS to illustrate barriers to growth','Award max [6] if only growth OR development addressed']},
+
+{cat:'dev',diff:'medium',marks:10,type:'Explain',src:'N21 · P1 Q4a',
+ q:'Explain how economic growth might reduce the level of absolute poverty in a country.',
+ tags:['economic growth','absolute poverty','trickle-down','income','living standards'],
+ hints:['Define economic growth (increase in real GDP) and absolute poverty (~$2.15/day threshold)','Draw AD/AS with rightward shift or PPC shifting outward','Growth → higher household incomes → more people above poverty threshold','Government tax revenues increase → more funds for welfare, healthcare, education','"Trickle-down" effect: even if inequality rises, absolute incomes of poor may rise','Real-world: China lifted 800m+ people out of poverty 1990–2020']},
+
+{cat:'dev',diff:'hard',marks:15,type:'Discuss',src:'M22 · P1 Q3b',
+ q:'Using real-world examples, discuss the significance of economic barriers for a country\'s economic growth and economic development.',
+ tags:['economic barriers','inequality','infrastructure','human capital','commodity dependence','debt','landlocked'],
+ hints:['Define economic barriers (distinguished from political/social barriers)','Barriers: rising inequality; lack of infrastructure; low human capital; commodity dependence (commodity trap)','Capital flight; indebtedness (debt servicing consumes revenue); informal economy (untaxed)','Geography: landlocked nations face higher trade costs (e.g., North Macedonia)','Climate/disease: malaria burden in Sub-Saharan Africa constrains productivity','Discuss relative significance: compare economic vs. political barriers','Real examples: Tanzania debt burden; Sierra Leone commodity dependence','Award max [9] if only growth OR only development addressed']},
+
+{cat:'dev',diff:'hard',marks:15,type:'Evaluate',src:'M22 · P2 Q2g',
+ q:'Using information from the texts and data, evaluate the impact of government intervention in promoting economic growth and economic development in Sierra Leone.',
+ tags:['government intervention','Sierra Leone','economic growth','HDI','infrastructure','market failure'],
+ hints:['Sierra Leone: agriculture/mining = 70% GDP; youth unemployment high; IHDI very low','Government interventions: free education, infrastructure, anti-corruption measures, automation of services','Free education boosts human capital → long-term growth potential','Infrastructure investment attracts FDI; diversifies economy','Limitations: high government debt (62% GDP); reducing budget deficit constrains spending','Foreign aid declining; NGO reliance for health undermines sustainability','Use Table 3 data: real GDP growing 2017–2018; but exports fell']},
+
+{cat:'dev',diff:'hard',marks:8,type:'Evaluate',src:'N21 · P2 Q4d',
+ q:'Using information from the text and data, evaluate the impact on economic development of the Tanzanian government\'s policy of spending on infrastructure projects.',
+ tags:['infrastructure','economic development','Tanzania','debt','multiplier','opportunity cost'],
+ hints:['Infrastructure: railways, dams, roads, airports → raises productive capacity (LRAS right)','Short-run: multiplier effect on AD; employment in construction sectors','Long-run: lower transport costs → competitiveness; electricity generation → manufacturing','Major limitation: financed by high-interest commercial loans → national debt rising ($22bn to $28.6bn)','Debt servicing crowds out social spending (education, health)','Current account deficit widens due to imported materials','Evaluation: benefits long-term vs. short-term debt sustainability concerns']},
+
+{cat:'dev',diff:'hard',marks:8,type:'Discuss',src:'N21 · P2 Q3d',
+ q:'Using information from the text and data, discuss the extent to which foreign aid from the US may assist economic development in Honduras.',
+ tags:['foreign aid','Honduras','economic development','humanitarian aid','coffee','climate change'],
+ hints:['Foreign aid: humanitarian + NGO grants for climate change adaptation','NGOs help coffee farmers adapt: crop diversification (avocados, timber)','Aid helps maintain livelihoods → reduces migration pressure','BUT: aid declining ($750m → $530m, 2016–2019); largest cuts to agriculture projects','Remittances vastly larger than aid ($4.3bn received in 2017)','Aid conditionality: US threatened to cut if governments don\'t reduce migration','Development needs structural change, not just aid']},
+
+{cat:'dev',diff:'vhard',marks:15,type:'Discuss',src:'M22 · P2 Q1g',
+ q:'Using information from the texts and data, discuss the likely economic effects on North Macedonia of its entry into the European Union (EU) Common Market.',
+ tags:['EU membership','trade creation','trade diversion','FDI','free movement','North Macedonia'],
+ hints:['Trade benefits: tariff-free access to EU market → exports grow; 75% exports already to EU','Trade creation vs. trade diversion: removal of barriers with EU may divert from other partners','FDI: EU companies likely to invest more in North Macedonia (cheap labour + inside common market)','BUT: profit repatriation = major concern (foreign profits sent home)','Free movement of labour → emigration risk; brain drain from North Macedonia','Wine/beef/fish quotas removed → domestic producers face EU competition','Financial assistance from EU (€633m for reforms) helps modernisation','Use Table 2: GDP growth positive; unemployment falling; evaluate trajectory']},
+
+{cat:'dev',diff:'vhard',marks:15,type:'Evaluate',src:'N22 · P2 Q2g',
+ q:'Using information from the texts and data, evaluate the effectiveness of Uruguay\'s government macroeconomic policies in achieving economic growth and economic development.',
+ tags:['macroeconomic policy','Uruguay','HDI','fiscal policy','monetary policy','supply-side','income redistribution'],
+ hints:['Fiscal policy: progressive tax (25%→36% top rate); social spending for poor','Monetary policy: central bank aims to reduce inflation below 6%; currently 7.9%','Supply-side: state enterprise efficiency reforms; deregulation of labour market; ICT sector development','Growth data: 7.8% (2010) → 0.22% (2019) — significant slowdown; policy effectiveness questionable','Development: HDI 0.78 → 0.82; Gini 0.45 → 0.40 (less inequality); life expectancy up','Concerns: unemployment rising (7.2% → 9.4%); agricultural vulnerability','Evaluate: development goals better achieved than growth goals']},
+
+{cat:'dev',diff:'vhard',marks:15,type:'Discuss',src:'N22 · P2 Q1g',
+ q:'Using information from the texts and data, discuss the extent to which the ready-made garments (RMG) sector in Bangladesh contributes to achieving the SDG of sustained, inclusive, and sustainable economic growth, full employment, and decent work.',
+ tags:['Bangladesh','RMG','sustainable development','SDG','gender employment','working conditions','income inequality'],
+ hints:['Sustained growth: RMG = 84% of exports; GDP growth from 5.6% to 8.1% — contribution is large','Inclusive: RMG employs 4 million, majority women; female labour force participation rising (29.8→36.4%)','Absolute poverty falling from 19.4% to 9.2%','BUT: inequality rising (Gini 0.32→0.40) — not fully inclusive','Decent work: safety improvements post-Rana Plaza 2013; minimum wage raised; inspections','STILL: working conditions remain poor; many informal sector jobs insecure','Sustainable: "green garments" initiatives — but only 100 factories certified','Risk: ELDC graduation by 2026 → lose preferential access; US tariffs already 15%']},
+
+/* ── POVERTY & EQUITY ── */
+{cat:'pov',diff:'easy',marks:4,type:'Explain (Diagram)',src:'M22 · P2 Q2e',
+ q:'Using a poverty cycle diagram, explain how the provision of free primary and secondary education may help households break the poverty cycle in Sierra Leone.',
+ tags:['poverty cycle','education','human capital','Sierra Leone','virtuous cycle'],
+ hints:['Draw poverty cycle: low income → low savings → low investment → low productivity → low income','Free education breaks cycle: low income households can send children to school at no cost','Education → higher human capital → higher productivity → higher future income','Also: household income freed from education fees → can invest in farming equipment','Modern farming curriculum → higher agricultural productivity → food security']},
+
+{cat:'pov',diff:'easy',marks:4,type:'Explain (Diagram)',src:'N22 · P2 Q1f',
+ q:'Using a Lorenz curve diagram, explain what happened to the distribution of income in Bangladesh between 2010 and 2019.',
+ tags:['Lorenz curve','income distribution','inequality','Gini coefficient','Bangladesh'],
+ hints:['Draw Lorenz curve diagram with line of equality','Gini coefficient rose from 0.32 to 0.40 → income distribution became more unequal','2019 Lorenz curve should bow further from line of equality than 2010 curve','RMG sector growth mainly benefited those already employed; informal sector fell behind']},
+
+{cat:'pov',diff:'easy',marks:4,type:'Explain (Diagram)',src:'N21 · P2 Q4c',
+ q:'Using a Lorenz curve diagram, explain what is meant by an increase in income inequality in Tanzania from 2015 to 2019.',
+ tags:['Lorenz curve','income inequality','Tanzania','Gini coefficient'],
+ hints:['Draw two Lorenz curves: 2015 closer to line of equality; 2019 further away','The 2019 curve bows further out from the 45° equality line','Means: bottom X% of population earn a smaller share of total income in 2019 vs. 2015','Link to context: growth benefited higher-income groups; poor population rising due to population growth']},
+
+{cat:'pov',diff:'hard',marks:15,type:'Evaluate',src:'N21 · P1 Q4b',
+ q:'Evaluate the view that progressive income tax is the best way to increase equity in an economy.',
+ tags:['progressive tax','equity','income redistribution','tax avoidance','alternative policies','transfer payments'],
+ hints:['Define progressive income tax (higher rates for higher incomes) and equity','How it works: higher earners pay more → funds public services (healthcare, education) benefiting all','Reduces after-tax income inequality → increases equity','Limitations: disincentive to work/invest (Laffer curve); avoidance/evasion by high earners','Rich may relocate businesses or income offshore','Alternative 1: Transfer payments (UBI, welfare benefits) — more direct redistribution','Alternative 2: Better labour market functioning (minimum wage, anti-discrimination)','Alternative 3: Public goods spending (education, healthcare) — equalises opportunities','Award max [12] if no alternative policy considered']},
+]; // end questions
+
+/* ══════════════════════════════════ STATE ══════════════════════════════════ */
+let activeCategory = 'all', activeDiff = 'all', searchQuery = '';
+const DLABEL = { easy:'Easy', medium:'Medium', hard:'Hard', vhard:'Very Hard' };
+
+/* ══════════════════════════════════ STATS ══════════════════════════════════ */
+function renderStats() {
+  const c = {easy:0,medium:0,hard:0,vhard:0};
+  questions.forEach(q=>c[q.diff]++);
+  document.getElementById('statsRow').innerHTML = `
+    <div class="stat-pill all"><span class="dot" style="background:var(--muted)"></span>${questions.length} total</div>
+    <div class="stat-pill e"><span class="dot"></span>${c.easy} Easy</div>
+    <div class="stat-pill m"><span class="dot"></span>${c.medium} Medium</div>
+    <div class="stat-pill h"><span class="dot"></span>${c.hard} Hard</div>
+    <div class="stat-pill v"><span class="dot"></span>${c.vhard} V.Hard</div>`;
+}
+
+/* ══════════════════════════════════ NAV ══════════════════════════════════ */
+function renderCatNav() {
+  document.getElementById('catNav').innerHTML = categories.map(c=>`
+    <button class="cat-tab${c.id===activeCategory?' active':''}" onclick="setCategory('${c.id}',this)">
+      ${c.icon?c.icon+' ':''}${c.label}
+    </button>`).join('');
+}
+
+/* ══════════════════════════════════ RENDER ══════════════════════════════════ */
+function card(q, idx) {
+  return `
+  <div class="qcard ${q.diff}" id="qc${idx}" data-diff="${q.diff}" data-cat="${q.cat}">
+    <div class="qbody">
+      <div class="qmeta">
+        <span class="badge src">${q.src}</span>
+        <span class="badge pts">${q.marks} marks</span>
+        <span class="badge diff ${q.diff}">${DLABEL[q.diff]}</span>
+        <span class="badge type">${q.type}</span>
+      </div>
+      <div class="qtext">${q.q}</div>
+      <div class="qtags">${q.tags.map(t=>`<span class="qtag">${t}</span>`).join('')}</div>
+      <button class="hints-btn" onclick="toggleHints(this)">
+        <span>📌 Mark scheme hints</span><span class="arrow">▼</span>
+      </button>
+      <div class="hints-body">
+        ${q.hints.map(h=>`<div class="hint"><span class="hbullet">›</span><span>${h}</span></div>`).join('')}
+      </div>
+    </div>
+  </div>`;
+}
+
+function catSection(cat) {
+  const qs = questions.filter(q=>q.cat===cat.id);
+  return `
+  <div class="cat-section" id="sec-${cat.id}">
+    <div class="cat-head">
+      <div class="cat-icon">${cat.icon}</div>
+      <div class="cat-title">${cat.label}</div>
+      <div class="cat-cnt">${qs.length} question${qs.length!==1?'s':''}</div>
+    </div>
+    <div class="qgrid">${qs.map(q=>card(q,questions.indexOf(q))).join('')}</div>
+  </div>`;
+}
+
+function renderMain() {
+  const micro = categories.filter(c=>c.section==='micro');
+  const macro = categories.filter(c=>c.section==='macro');
+  const showAll = activeCategory==='all';
+  let html = '';
+  if(showAll) html += `<div class="section-label"><span>⬡ Microeconomics</span></div>`;
+  micro.forEach(cat=>{ if(showAll||activeCategory===cat.id) html+=catSection(cat); });
+  if(showAll) html += `<div class="section-label"><span>⬡ Macroeconomics</span></div>`;
+  macro.forEach(cat=>{ if(showAll||activeCategory===cat.id) html+=catSection(cat); });
+  document.getElementById('mainContent').innerHTML =
+    html||`<div class="empty"><h3>No questions found</h3><p>Try a different filter or search term.</p></div>`;
+  applyFilters();
+}
+
+/* ══════════════════════════════════ FILTERS ══════════════════════════════════ */
+function applyFilters() {
+  const q = searchQuery.toLowerCase();
+  document.querySelectorAll('.qcard').forEach(card=>{
+    const ok = (activeDiff==='all'||card.dataset.diff===activeDiff) &&
+               (!q||card.innerText.toLowerCase().includes(q));
+    card.classList.toggle('hidden',!ok);
+  });
+  document.querySelectorAll('.cat-section').forEach(sec=>{
+    sec.classList.toggle('hidden', sec.querySelectorAll('.qcard:not(.hidden)').length===0);
+  });
+}
+function setCategory(id,el){
+  activeCategory=id;
+  document.querySelectorAll('.cat-tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  renderMain();
+}
+function setDiff(diff,el){
+  activeDiff=diff;
+  document.querySelectorAll('.df').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+  applyFilters();
+}
+function toggleHints(btn){
+  btn.nextElementSibling.classList.toggle('open');
+  btn.querySelector('.arrow').classList.toggle('open');
+}
+document.getElementById('searchBox').addEventListener('input',function(){
+  searchQuery=this.value; applyFilters();
+});
+
+renderStats(); renderCatNav(); renderMain();
+</script>
+</body>
+</html>
